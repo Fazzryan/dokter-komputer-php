@@ -58,7 +58,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-md-10 col-lg-6">
                     <h3>Service Kami</h3>
-                    <p class="py-3">Butuh perbaikan komputer, laptop dan barang lainnya ? Silahkan hubungi customer service kami di +62 852-2342-2415 atau bisa datang langsung ke toko Dokter Komputer untuk mengkonsultasikannya secara langsung.</p>
+                    <p class="py-3">Butuh perbaikan komputer, laptop dan barang lainnya? Silahkan hubungi customer service kami di +62 852-2342-2415 atau bisa datang langsung ke toko Dokter Komputer untuk mengkonsultasikannya secara langsung.</p>
                 </div>
             </div>
 
