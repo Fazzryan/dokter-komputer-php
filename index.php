@@ -167,8 +167,11 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                     Rp. <?= $item["harga"] ?>
                                 </p>
                             </div>
-                            <a href="" class="btn btn-green m-3">
+                            <a href="" class="btn btn-green m-3 d-none d-md-block">
                                 Tambah ke Keranjang
+                            </a>
+                            <a href="" class="btn btn-green m-3 d-block d-md-none">
+                                + Keranjang
                             </a>
                         </div>
                     </div>

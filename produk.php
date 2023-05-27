@@ -138,8 +138,11 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                                             Rp. <?= $item["harga"] ?>
                                         </p>
                                     </div>
-                                    <a href="" class="btn btn-green m-3 fs-14">
+                                    <a href="" class="btn btn-green m-3 d-none d-md-block">
                                         Tambah ke Keranjang
+                                    </a>
+                                    <a href="" class="btn btn-green m-3 d-block d-md-none">
+                                        + Keranjang
                                     </a>
                                 </div>
                             </div>
