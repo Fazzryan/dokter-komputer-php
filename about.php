@@ -53,26 +53,71 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
         </div>
     </section>
 
-    <section>
+    <section class="mb-5">
         <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-12 col-md-10 col-lg-6">
-                    <h3>Tentang Kami</h3>
-                    <p class="py-3">Butuh perbaikan komputer, laptop dan barang lainnya? Silahkan hubungi customer service kami di +62 852-2342-2415 atau bisa datang langsung ke toko Dokter Komputer untuk mengkonsultasikannya secara langsung.</p>
-                </div>
-            </div>
+            <div class="row ">
+                <div class="col-12 col-lg-6 ">
+                    <h3 class="mb-4">Tentang Kami</h3>
+                    <p>Dokter komputer merupakan e-commerce yang dibuat oleh kelompok 5 untuk memenuhi salah satu tugas mata kuliah Rekayasa Perangkat Lunak (RPL). Aplikasi ini menyediakan berbagai macam komponen komputer/laptop yang mungkin anda sedang cari.</p>
 
-            <div class="row g-2 g-md-3 row-cols-1 row-cols-md-2 row-cols-lg-3 mb-5">
-                <div class="col">
-                    <div class="card py-3 rounded-16 shadow-1 text-center">
-                        <img src="asset/img/komputer.svg" alt="Icon" class="mx-auto">
-                        <div class="card-body">
-                            <h5 class="card-title">Service Komputer</h5>
-                            <a href="" class="btn btn-green mt-2">Selengkapnya</a>
+                    <p>Selain itu aplikasi ini juga menyediakan jasa service laptop/komputer yang bermasalah, bisa langsung kami perbaiki. Dan juga kami menyediakan fitur chat untuk konsumen kalau misalnya mau bertanya.</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h3 class="mb-2">Kontak Kami</h3>
+                    <p>Jika ada pertanyaan lebih lanjut bisa mengisi form dibawah ini.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-2">
+                        <div class="mb-2 mb-lg-3">
+                            <label for="nama" class="form-label">Nama <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" required autocomplete="off">
+                        </div>
+                        <div class="mb-2 mb-lg-3">
+                            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" required autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="row row-cols-1">
+                        <div class="col">
+                            <label for="pesan" class="form-label">Pesan</label>
+                            <textarea name="" id="" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="col mt-2">
+                            <button class="btn btn-green">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row g-2 g-md-3 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 my-5">
+                <div class="col">
+                    <h3 class="mb-4">Profile Pembuat</h3>
+                    <div class="card py-4 rounded-16 shadow-1">
+                        <div class="d-flex flex-row justify-content-xl-between">
+                            <img src="asset/img/profile1.jpg" alt="profile">
+                            <div>
+                                <div class="d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <h5 class="card-title">Dinda Fazryan</h5>
+                                        <span class="fs-13 text-gray">Web Developer</span>
+                                        <span class="d-block mt-1 fs-14">Lorem ipsum dolor sit amet consectetur adipisicing Lorem.</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <span class="me-2">
+                                            <a href="#"><i class="bi bi-instagram"></i></a>
+                                        </span>
+                                        <span class="me-2">
+                                            <a href="#"><i class="bi bi-youtube"></i></a>
+                                        </span>
+                                        <span class="me-2">
+                                            <a href="#"><i class="bi bi-facebook"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Footer -->
     <footer style="background-color: #0C1F33;">
