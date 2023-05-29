@@ -90,13 +90,13 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
             <div class="row g-2 g-md-3 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 my-5">
                 <div class="col">
                     <h3 class="mb-4">Profile Pembuat</h3>
-                    <div class="card py-4 rounded-16 shadow-1">
-                        <div class="d-flex flex-row justify-content-xl-between">
-                            <img src="asset/img/profile1.jpg" alt="profile">
-                            <div>
+                    <div class="py-4 rounded-16 shadow-1">
+                        <div class="d-flex flex-row justify-content-xl-between px-3">
+                            <img src="asset/img/profile1.jpg" alt="profile" class="rounded-3" width="135">
+                            <div class="ms-3">
                                 <div class="d-flex flex-column justify-content-between h-100">
                                     <div>
-                                        <h5 class="card-title">Dinda Fazryan</h5>
+                                        <h5 class="">Dinda Fazryan</h5>
                                         <span class="fs-13 text-gray">Web Developer</span>
                                         <span class="d-block mt-1 fs-14">Lorem ipsum dolor sit amet consectetur adipisicing Lorem.</span>
                                     </div>

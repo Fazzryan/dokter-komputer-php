@@ -214,6 +214,7 @@ td {
 .nav-link.active {
     /* color: #FF7F3F !important; */
     color: var(--color-green-1) !important;
+    font-weight: 500;
 }
 
 .nav-link:hover {
