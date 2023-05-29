@@ -36,7 +36,7 @@
 
 body {
     font-family: var(--font-roboto), sans-serif;
-    color: var(-color-dark);
+    color: var(--color-dark);
     /* height: 100rem; */
 }
 
@@ -249,6 +249,13 @@ td {
     background:rgb(253, 254, 255);
     box-shadow: 0 3px 23px -10px rgba(145, 158, 171, 0.87);
 }
+/* =========================LOGIN & REGISTRASI ================== */
+.auth  {
+    margin: 13rem 0;
+}
+.auth img {
+    width: 80%;
+}
 /* ============================= FOOTER ===================== */
 footer .footer-link:hover {
     color: var(-color-cansel);
@@ -336,7 +343,7 @@ footer .footer-link:hover {
 
 
 .text-green {
-    color: var(-color-green-1);
+    color: var(--bg-color-blue-color-green-1);
 }
 
 .btn-green {
@@ -595,6 +602,10 @@ footer .footer-link:hover {
     #content .content-body {
         margin-top: 100px;
     }
+    /* =========================LOGIN & REGISTRASI ================== */
+    .auth  {
+        margin: 8rem 0;
+    }
 }
 
 /* ---------------------------------------------  MOBILE -------------------------------------------------- */
@@ -617,4 +628,12 @@ footer .footer-link:hover {
     .card-text {
         font-size: 14px;
     }
+    /* =========================LOGIN & REGISTRASI ================== */
+    .auth  {
+        margin: 6rem 0;
+    }
+    .auth p  {
+        font-size: 14px;
+    }
+    
 }
