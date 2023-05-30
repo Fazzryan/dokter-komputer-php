@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom">
     <div class="container py-2 ">
-        <a class="navbar-brand" href="#">Dokter Komputer</a>
+        <a class="navbar-brand" href="#">
+            <img src="asset/img/logo2.png" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,18 +23,18 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" class="btn btn-green mx-lg-2 position-relative">
+                    <a class="btn btn-green mx-lg-2 position-relative" href="keranjang.php">
                         <i class="bi bi-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-cansel">
                             1
                         </span>
                     </a>
-                    <a class="btn btn-green mx-lg-1 d-lg-none" aria-current="page" href="#">
+                    <a class="btn btn-green mx-lg-1 d-lg-none" aria-current="page" href="akun.php">
                         <i class="bi bi-person"></i>
                     </a>
                 </li>
                 <li class="nav-item mt-1 mt-lg-0 d-none d-lg-block">
-                    <a class="btn btn-green mx-lg-1" aria-current="page" href="#">
+                    <a class="btn btn-green mx-lg-1" aria-current="page" href="akun.php">
                         <i class="bi bi-person"></i>
                     </a>
                 </li>
