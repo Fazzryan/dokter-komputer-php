@@ -38,13 +38,13 @@ include "fungsi.php";
                         <p>Selamat datang di Dokter Komputer. Masukan email anda untuk memulai aplikasi.</p>
                     </div>
                     <form action="" method="post">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <input type="text" class="form-control" name="email" required autocomplete="off" placeholder="Email">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <button type="submit" name="login" class="btn btn-green w-100 fw-500">Login</button>
                         </div>
                     </form>
