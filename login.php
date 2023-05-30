@@ -21,24 +21,15 @@ include "fungsi.php";
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1 border-0">
-        <div class="container py-2 ">
+        <div class="container justify-content-center justify-content-md-between align-items-center">
             <a class="navbar-brand" href="#">Dokter Komputer</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item px-2">
-                        <a class="nav-link ln-30 fw-400" aria-current="page" href="login.php">Sudah punya akun? login</a>
-                    </li>
-                </ul>
-            </div>
+            <span class="ln-30 fw-400">Belum punya akun? <a href="registrasi.php">Registrasi</a></span>
         </div>
     </nav>
     <section class="auth">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="col-12 col-md-6 col-lg-5 col-xl-4 mb-5 mb-lg-0 text-center text-md-start">
+                <div class="col-12 col-md-6 col-lg-5 col-xl-4 my-4 mb-lg-0 text-center text-md-start">
                     <img src="asset/img/login-dk.svg" alt="icon">
                 </div>
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
