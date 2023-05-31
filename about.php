@@ -33,7 +33,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
     <link rel="stylesheet" href="asset/css/style.css">
     <!-- Bs Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <title>Dokter Komputer</title>
+    <title>Tentang Kami - Dokter Komputer</title>
 </head>
 
 <body>
