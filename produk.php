@@ -40,7 +40,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
 
     <?php include "navbar.php" ?>
 
-    <section id="hero">
+    <section class="produk">
         <div class="container">
             <div class="row">
                 <nav aria-label="breadcrumb">
@@ -124,7 +124,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                         <?php foreach ($produk as $item) : ?>
                             <div class="col-6">
                                 <div class="card card-produk h-100 rounded-16">
-                                    <a href="#" class="mx-auto mt-3">
+                                    <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="mx-auto mt-3">
                                         <img src="fileUpload/<?= $item['gambar'] ?>" alt="Gambar Produk">
                                     </a>
                                     <div class="card-body h-100 mt-auto">
@@ -132,7 +132,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                                             <?= $item["nama_kategori"] ?>
                                         </a>
                                         <h5 class="card-title fs-15 mt-2">
-                                            <a href="#" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '...', 45) ?></a>
+                                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '...', 45) ?></a>
                                         </h5>
                                         <p class="card-text fw-500 fs-15">
                                             Rp. <?= $item["harga"] ?>
