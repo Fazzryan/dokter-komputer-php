@@ -25,7 +25,7 @@
                 <li class="nav-item">
                     <a class="btn btn-green mx-lg-2 position-relative" href="keranjang.php">
                         <i class="bi bi-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-cansel">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             1
                         </span>
                     </a>
