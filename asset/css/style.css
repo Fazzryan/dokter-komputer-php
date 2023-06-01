@@ -219,9 +219,7 @@ td {
 
 .nav-link:hover {
     transition: .1s ease-in-out;
-    /* color: #FF7F3F !important; */
     color: var(--color-green-1) !important;
-    transform: scale(1.06);
 }
 /* ============================= KATEGORI ===================== */
 #kategori .card:hover img{
@@ -249,9 +247,25 @@ td {
     background:rgb(253, 254, 255);
     box-shadow: 0 3px 23px -10px rgba(145, 158, 171, 0.87);
 }
+/* ========================= PRODUK ================== */
+.produk {
+    margin: 7rem 0;
+}
+/* ========================= DETAIL PRODUK ================== */
+.detailProduk {
+    margin: 7rem 0;
+}
+.detailProduk img {
+    width: 80%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+}
+.detailProduk button {
+    font-size: 16px;
+}
 /* ========================= KERANJANG ================== */
 .keranjang {
-    margin: 6rem 0;
+    margin: 7rem 0;
 }
 .keranjang img {
     width: 120px;
@@ -348,9 +362,8 @@ footer .footer-link:hover {
     opacity: 0.7;
 }
 
-
 .text-green {
-    color: var(--bg-color-blue-color-green-1);
+    color: var(--color-green-1);
 }
 
 .btn-green {
@@ -633,6 +646,16 @@ footer .footer-link:hover {
         font-size: 14px;
     }
     .card-text {
+        font-size: 14px;
+    }
+    /* ========================= DETAIL PRODUK ================== */
+    .detailProduk {
+        margin: 7rem 0;
+    }
+    .detailProduk img {
+        width: 100%;
+    }
+    .detailProduk button {
         font-size: 14px;
     }
     /* ========================= KERANJANG ================== */
