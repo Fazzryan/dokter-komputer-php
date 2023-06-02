@@ -2,6 +2,8 @@
 include "db/koneksi.php";
 include "fungsi.php";
 
+$kategori = show("SELECT * FROM kategori");
+
 // Pagination
 $batas_halaman = 16;
 $halaman = isset($_GET["halaman"]) ? (int) $_GET["halaman"] : 1;
@@ -59,30 +61,12 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                                 <div class="me-2"><i class="bi bi-cart4"></i></div>
                                 <a href="#">Semua Produk</a>
                             </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-pc-display-horizontal"></i></div>
-                                <a href="#">Komputer</a>
-                            </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-laptop"></i></div>
-                                <a href="#">Laptop</a>
-                            </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-cpu"></i></div>
-                                <a href="#">Prosesor</a>
-                            </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-speaker"></i></div>
-                                <a href="#">Speaker</a>
-                            </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-headset"></i></div>
-                                <a href="#">Headset</a>
-                            </div>
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-hdd"></i></div>
-                                <a href="#">Flashdisk</a>
-                            </div>
+                            <?php foreach ($kategori as $item) : ?>
+                                <a href="produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item ">
+                                    <i class="bi <?= $item['icon_kategori'] ?>"></i>
+                                    <span class="ms-2"><?= $item["nama_kategori"] ?></span>
+                                </a>
+                            <?php endforeach ?>
                         </div>
                     </div>
                     <h5>Urut Berdasarkan</h5>
