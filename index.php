@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
@@ -60,11 +61,6 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                         </button>
                     </div>
                 </div>
-                <!-- <div class="col-md-12 col-lg-6 mt-4 mt-lg-0 ">
-                    <h5 class="fw-400 f-roboto display-5">Temukan barang impian mu di <span class="text-blue">Dokter Komputer</span></h5>
-                    <h5 class="mt-md-4 mb-md-3 fw-400 fs-16">Dokter Komputer adalah e-commerce yang dapat memberikan pengalaman terbaik untuk jual beli komputer, komponen komputer dan aksesoris komputer.</h5>
-                    <a href="#" class="btn btn-blue">Explore produk <i class="bi bi-arrow-right"></i></a>
-                </div> -->
             </div>
         </div>
         </div>

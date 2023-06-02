@@ -90,21 +90,21 @@ if (isset($_POST["tambah"])) {
                     <div class="row mt-3 mt-md-4">
                         <div class="col-12 col-md-6">
                             <div class="card p-3 p-lg-4 p-2 border-1 shadow-1 rounded-16 mb-3">
-                                <form action="" method="post"">
-                                <div class=" mb-3">
-                                    <label for="nama_kategori" class="form-label fw-500">Nama Kategori</label>
-                                    <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" required autocomplete="off" autofocus>
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" name="tambah" class="btn btn-green">Tambah Kategori</button>
+                                <form action="" method="post">
+                                    <div class=" mb-3">
+                                        <label for="nama_kategori" class="form-label fw-500">Nama Kategori</label>
+                                        <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" required autocomplete="off" autofocus>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="submit" name="tambah" class="btn btn-green">Tambah Kategori</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 

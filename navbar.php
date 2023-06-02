@@ -21,22 +21,39 @@
                     <a href="about.php" class="nav-link ln-30 fw-400 <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active' : ''; ?>" href="#">Tentang Kami</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="btn btn-green mx-lg-2 position-relative" href="keranjang.php">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item me-3">
+                    <a class="btn btn-green position-relative" href="keranjang.php">
                         <i class="bi bi-cart"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             1
                         </span>
                     </a>
-                    <a class="btn btn-green mx-lg-1 d-lg-none" aria-current="page" href="akun.php">
-                        <i class="bi bi-person"></i>
-                    </a>
                 </li>
-                <li class="nav-item mt-1 mt-lg-0 d-none d-lg-block">
-                    <a class="btn btn-green mx-lg-1" aria-current="page" href="akun.php">
-                        <i class="bi bi-person"></i>
-                    </a>
+                <?php if (isset($_SESSION["username"])) : ?>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="btn btn-green dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li class="dropdown-item" href="dashboard/index.php"><i class="bi bi-house me-1"></i> Dashboard</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item">
+                        <a class="btn btn-green" href="login.php">
+                            <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>
+                            Login
+                        </a>
+                    </li>
+                <?php endif ?>
                 </li>
             </ul>
         </div>

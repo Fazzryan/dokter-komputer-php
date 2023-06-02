@@ -1,6 +1,35 @@
 <?php
 include "db/koneksi.php";
 
+// Login
+function login($data)
+{
+    global $koneksi;
+
+    $email = htmlspecialchars($data["email"]);
+    $password = htmlspecialchars(md5($data["password"]));
+
+    $user = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+    $data = mysqli_fetch_assoc($user);
+
+    if ($user) {
+        $_SESSION['id_user'] = $data['id_user'];
+        $_SESSION['username'] = $data['username'];
+        $_SESSION['email'] = $data['email'];
+        $_SESSION['password'] = $data['password'];
+    }
+    return mysqli_affected_rows($koneksi);
+}
+// Logout
+function logout()
+{
+    session_destroy();
+    echo "
+    <script>
+        alert('Berhasil Logout!'); 
+        window.location ='login.php';
+    </script>";
+}
 // Ambil data 
 function show($query)
 {
@@ -205,7 +234,8 @@ function addKategori($data)
 {
     global $koneksi;
 
-    if ($data["nama_kategori"] == "") {
+    $nama_kategori = htmlspecialchars($data["nama_kategori"]);
+    if ($nama_kategori == "") {
         echo "
             <script>
                 alert('Nama kategori harus di isi!')
@@ -213,7 +243,6 @@ function addKategori($data)
         ";
         return;
     }
-    $nama_kategori = htmlspecialchars($data["nama_kategori"]);
     $query = "INSERT INTO kategori (id_kategori, nama_kategori) VALUES ('','$nama_kategori')";
     mysqli_query($koneksi, $query);
 

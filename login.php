@@ -1,7 +1,31 @@
 <?php
+session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+if (!empty($_SESSION["username"]) || !empty($_SESSION["email"]) || !empty($_SESSION["password"])) {
+    header("Location: index.php");
+}
+
+if (isset($_POST["login"])) {
+    // var_dump($_POST);
+    // die;
+    if (login($_POST) > 0) {
+        echo "
+        <script>
+            alert('Berhasil login');
+            window.location.href='index.php';
+        </script>
+    ";
+    } else {
+        echo "
+        <script>
+            alert('Gagal login');
+            window.location.href='login.php';
+        </script>
+    ";
+    }
+}
 
 ?>
 
@@ -39,7 +63,7 @@ include "fungsi.php";
                     </div>
                     <form action="" method="post">
                         <div class="mb-2">
-                            <input type="text" class="form-control" name="email" required autocomplete="off" placeholder="Email">
+                            <input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email">
                         </div>
                         <div class="mb-2">
                             <input type="password" class="form-control" name="password" placeholder="Password">
