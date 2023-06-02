@@ -57,16 +57,16 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                     <h5>Kategori</h5>
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-4">
                         <div class="d-flex flex-column">
-                            <div class="kategori-item">
-                                <div class="me-2"><i class="bi bi-cart4"></i></div>
-                                <a href="#">Semua Produk</a>
-                            </div>
+                            <a href="produk.php" class="kategori-item">
+                                <i class="bi bi-cart4"></i>
+                                <span class="ms-2"">Semua Produk</span>
+                            </a>
                             <?php foreach ($kategori as $item) : ?>
-                                <a href="produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item ">
+                                <a href=" produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item ">
                                     <i class="bi <?= $item['icon_kategori'] ?>"></i>
                                     <span class="ms-2"><?= $item["nama_kategori"] ?></span>
-                                </a>
-                            <?php endforeach ?>
+                            </a>
+                        <?php endforeach ?>
                         </div>
                     </div>
                     <h5>Urut Berdasarkan</h5>
