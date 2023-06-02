@@ -51,11 +51,16 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                         <p>Jumlah Item</p>
                         <form action="" method="post">
                             <div class="d-flex">
-                                <input type="number" name="jumlah_item" class="form-control w-50 me-2" value="1">
+                                <input type="number" name="jumlah_item" min="1" id="jumlah_item" class="form-control w-50 me-2" value="1">
                                 <button type="submit" name="tambah_keranjang" class="btn btn-green w-50"><i class="bi bi-cart"></i> Tambah ke Keranjang</button>
                             </div>
                         </form>
-                        <div class="my-5">
+                        <div class="mt-4">
+                            <div class="fs-15 text-muted">Kondisi : <span class="text-dark fw-500"><?= $produk[0]["kondisi"] ?></span></div>
+                            <div class="fs-15 text-muted">Berat : <span class="text-dark fw-500"><?= $produk[0]["berat"] ?></span></div>
+                            <div class="fs-15 text-muted">Min. Pemesanan : <span class="text-dark fw-500">1 Buah</span></div>
+                        </div>
+                        <div class="my-4">
                             <div class="d-block d-md-flex">
                                 <div class="me-3">
                                     <i class="bi bi-truck"></i>
