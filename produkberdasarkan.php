@@ -48,7 +48,8 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Produk</li>
+                        <li class="breadcrumb-item"><a href="produk.php">Produk</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $katakunci ?></li>
                     </ol>
                 </nav>
             </div>
