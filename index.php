@@ -145,7 +145,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
             <div class="d-flex justify-content-between align-items-center mb-2">
                 <h3>Rekomendasi Produk</h3>
                 <div class="d-none d-md-block text-xl-end">
-                    <a href="/produk" class="btn btn-green">Lihat semua produk <i class="fa-solid fa-right-long"></i>
+                    <a href="produk.php" class="btn btn-green">Lihat semua produk <i class="fa-solid fa-right-long"></i>
                     </a>
                 </div>
             </div>
@@ -153,7 +153,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                 <?php foreach ($rekomendasi_produk as $item) : ?>
                     <div class="col-6 col-md-4 col-xl-3">
                         <div class="card card-produk h-100">
-                            <a href="#" class="mx-auto mt-3">
+                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="mx-auto mt-3">
                                 <img src="fileUpload/<?= $item['gambar'] ?>" alt="Gambar Produk">
                             </a>
                             <div class="card-body h-100 mt-auto">
@@ -161,7 +161,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                     <?= $item["nama_kategori"] ?>
                                 </a>
                                 <h5 class="card-title fs-15 mt-2">
-                                    <a href="#" class="card-link"><?= $item["nama_produk"] ?></a>
+                                    <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link"><?= $item["nama_produk"] ?></a>
                                 </h5>
                                 <p class="card-text fw-500">
                                     Rp. <?= $item["harga"] ?>
@@ -182,7 +182,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
             <div class="row">
                 <div class="col-12">
                     <div class="py-4 text-center text-xl-end d-block d-md-none">
-                        <a href="/produk" class="btn btn-green">Lihat semua produk <i class="fa-solid fa-right-long"></i>
+                        <a href="produk.php" class="btn btn-green">Lihat semua produk <i class="fa-solid fa-right-long"></i>
                         </a>
                     </div>
                 </div>
