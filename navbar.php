@@ -42,13 +42,13 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a></li>
+                                <li><a class="dropdown-item" href="otentikasi/logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a></li>
                             </ul>
                         </div>
                     </li>
                 <?php else : ?>
                     <li class="nav-item">
-                        <a class="btn btn-green" href="login.php">
+                        <a class="btn btn-green" href="otentikasi/login.php">
                             <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>
                             Login
                         </a>

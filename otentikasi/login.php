@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "db/koneksi.php";
-include "fungsi.php";
+include "../db/koneksi.php";
+include "../fungsi.php";
 
 if (!empty($_SESSION["username"]) || !empty($_SESSION["email"]) || !empty($_SESSION["password"])) {
     header("Location: index.php");
@@ -36,8 +36,8 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/css/bootstrap.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="../asset/css/bootstrap.css">
+    <link rel="stylesheet" href="../asset/css/style.css">
     <!-- Bs Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Login - Dokter Komputer</title>
@@ -46,7 +46,7 @@ if (isset($_POST["login"])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-1 border-0">
         <div class="container justify-content-center justify-content-md-between align-items-center">
-            <a class="navbar-brand" href="#">Dokter Komputer</a>
+            <a class="navbar-brand" href="../index.php">Dokter Komputer</a>
             <span class="ln-30 fw-400">Belum punya akun? <a href="registrasi.php">Registrasi</a></span>
         </div>
     </nav>
@@ -54,7 +54,7 @@ if (isset($_POST["login"])) {
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4 my-4 mb-lg-0 text-center text-md-start">
-                    <img src="asset/img/login-dk.svg" alt="icon">
+                    <img src="../asset/img/login-dk.svg" alt="icon">
                 </div>
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <div class="mb-4">
@@ -79,10 +79,10 @@ if (isset($_POST["login"])) {
     </section>
 
     <!-- Footer -->
-    <?php include "footer.php" ?>
+    <?php include "../footer.php" ?>
 
-    <script src="asset/js/bootstrap.js"></script>
-    <script src="asset/js/script.js"></script>
+    <script src="../asset/js/bootstrap.js"></script>
+    <script src="../asset/js/script.js"></script>
 </body>
 
 </html>
