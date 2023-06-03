@@ -14,7 +14,7 @@ if (isset($_POST["login"])) {
         echo "
         <script>
             alert('Berhasil login');
-            window.location.href='index.php';
+            window.location.href='../index.php';
         </script>
     ";
     } else {

@@ -27,7 +27,7 @@ function logout()
     echo "
     <script>
         alert('Berhasil Logout!'); 
-        window.location ='login.php';
+        window.location ='../login.php';
     </script>";
 }
 // Ambil data 
