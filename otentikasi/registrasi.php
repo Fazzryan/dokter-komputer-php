@@ -2,6 +2,24 @@
 include "../db/koneksi.php";
 include "../fungsi.php";
 
+if (isset($_POST["registrasi"])) {
+    // var_dump($_POST);
+    // die;
+    if (adduser($_POST) > 0) {
+        echo "
+        <script>
+            alert('Berhasil membuat akun');
+            window.location.href='login.php';
+        </script>
+    ";
+    } else {
+        echo "
+        <script>
+            alert('Gagal membuat akun');
+        </script>
+    ";
+    }
+}
 
 ?>
 
@@ -40,7 +58,7 @@ include "../fungsi.php";
                     </div>
                     <form action="" method="post">
                         <div class="mb-2">
-                            <input type="text" class="form-control" name="email" required autocomplete="off" placeholder="Username">
+                            <input type="text" class="form-control" name="username" required autocomplete="off" placeholder="Username">
                         </div>
                         <div class="mb-2">
                             <input type="email" class="form-control" name="email" required autocomplete="off" placeholder="Email">

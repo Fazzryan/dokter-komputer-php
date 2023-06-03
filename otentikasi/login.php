@@ -4,7 +4,7 @@ include "../db/koneksi.php";
 include "../fungsi.php";
 
 if (!empty($_SESSION["username"]) || !empty($_SESSION["email"]) || !empty($_SESSION["password"])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 
 if (isset($_POST["login"])) {
@@ -20,8 +20,7 @@ if (isset($_POST["login"])) {
     } else {
         echo "
         <script>
-            alert('Gagal login');
-            window.location.href='login.php';
+            alert('Email atau Password salah');
         </script>
     ";
     }
@@ -63,10 +62,10 @@ if (isset($_POST["login"])) {
                     </div>
                     <form action="" method="post">
                         <div class="mb-2">
-                            <input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email">
+                            <input type="email" class="form-control" name="email" autocomplete="off" placeholder="Email" required>
                         </div>
                         <div class="mb-2">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                         <div class="mb-2">
                             <button type="submit" name="login" class="btn btn-green w-100 fw-500">Login</button>

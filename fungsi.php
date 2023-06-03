@@ -6,17 +6,18 @@ function login($data)
 {
     global $koneksi;
 
-    $email = htmlspecialchars($data["email"]);
-    $password = htmlspecialchars(md5($data["password"]));
+    $email = $data["email"];
+    $password = $data["password"];
 
-    $user = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email' AND password = '$password'");
-    $data = mysqli_fetch_assoc($user);
-
-    if ($user) {
-        $_SESSION['id_user'] = $data['id_user'];
-        $_SESSION['username'] = $data['username'];
-        $_SESSION['email'] = $data['email'];
-        $_SESSION['password'] = $data['password'];
+    $user = mysqli_query($koneksi, "SELECT * FROM user WHERE email = '$email'");
+    if (mysqli_num_rows($user) === 1) {
+        $data = mysqli_fetch_assoc($user);
+        if (password_verify($password, $data["password"])) {
+            $_SESSION['id_user'] = $data['id_user'];
+            $_SESSION['username'] = $data['username'];
+            $_SESSION['email'] = $data['email'];
+            $_SESSION['password'] = $data['password'];
+        }
     }
     return mysqli_affected_rows($koneksi);
 }
@@ -29,6 +30,21 @@ function logout()
         alert('Berhasil Logout!'); 
         window.location ='login.php';
     </script>";
+}
+// Buat Akun
+function adduser($data)
+{
+    global $koneksi;
+
+    $username = htmlspecialchars($data["username"]);
+    $email = htmlspecialchars($data["email"]);
+    $password = mysqli_real_escape_string($koneksi, $data["password"]);
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $tambahUser = mysqli_query($koneksi, "INSERT INTO user (id_user, username, email, password) VALUES ('', '$username', '$email', '$password')");
+    if ($tambahUser) {
+        return mysqli_affected_rows($koneksi);
+    }
 }
 // Ambil data 
 function show($query)
