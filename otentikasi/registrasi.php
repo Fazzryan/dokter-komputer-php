@@ -1,6 +1,11 @@
 <?php
+session_start();
 include "../db/koneksi.php";
 include "../fungsi.php";
+
+if (!empty($_SESSION["username"]) || !empty($_SESSION["email"]) || !empty($_SESSION["password"])) {
+    header("Location: ../index.php");
+}
 
 if (isset($_POST["registrasi"])) {
     // var_dump($_POST);
@@ -65,6 +70,9 @@ if (isset($_POST["registrasi"])) {
                         </div>
                         <div class="mb-2">
                             <input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" class="form-control" name="konfir_password" placeholder="Konfirmasi Password">
                         </div>
                         <div class="mb-2">
                             <button type="submit" name="registrasi" class="btn btn-green w-100 fw-500">Registrasi</button>

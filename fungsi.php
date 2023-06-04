@@ -39,6 +39,15 @@ function adduser($data)
     $username = htmlspecialchars($data["username"]);
     $email = htmlspecialchars($data["email"]);
     $password = mysqli_real_escape_string($koneksi, $data["password"]);
+    $konfir_password = mysqli_real_escape_string($koneksi, $data["password"]);
+
+    if ($password !== $konfir_password) {
+        echo "<script>
+        alert('Password tidak sesuai');
+        </script>";
+        return false;
+    }
+
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     $tambahUser = mysqli_query($koneksi, "INSERT INTO user (id_user, username, email, password) VALUES ('', '$username', '$email', '$password')");
@@ -75,7 +84,7 @@ function addProduk($data)
         echo "
             <script>
                 alert('Lengkapi semua data!')
-            </script>
+            </>
         ";
         return;
     }
