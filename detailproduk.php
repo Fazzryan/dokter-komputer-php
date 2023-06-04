@@ -1,11 +1,37 @@
 <?php
+session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
 $slug = $_GET["slug"];
 $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori WHERE slug = '$slug'");
 // var_dump($produk);
 // die;
+
+if (isset($_POST["tambah_keranjang"])) {
+    if (empty($_SESSION["username"]) || empty($_SESSION["email"])) {
+        echo "
+            <script>
+                alert('Login terlebih dahulu');
+            </script>
+        ";
+    } else {
+        if (tambah_keranjang($_POST) > 0) {
+            echo "
+            <script>
+                alert('Produk berhasil ditambahkan');
+            </script>
+        ";
+        } else {
+            echo "
+            <script>
+                alert('Produk gagal ditambahkan');
+            </script>
+        ";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +77,11 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                         <p>Jumlah Item</p>
                         <form action="" method="post">
                             <div class="d-flex">
-                                <input type="number" name="jumlah_item" min="1" id="jumlah_item" class="form-control w-50 me-2" value="1">
+                                <input type="hidden" name="id_produk" value="<?= $produk[0]["id_produk"] ?>">
+                                <input type="hidden" name="id_user" value="<?= $user ?>">
+                                <input type="hidden" name="harga" value="<?= $produk[0]["harga"] ?>">
+
+                                <input type="number" name="jumlah_produk" min="1" id="jumlah_produk" class="form-control w-50 me-2" value="1">
                                 <button type="submit" name="tambah_keranjang" class="btn btn-green w-50"><i class="bi bi-cart"></i> Tambah ke Keranjang</button>
                             </div>
                         </form>

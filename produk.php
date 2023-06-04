@@ -1,7 +1,9 @@
 <?php
+session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
 $kategori = show("SELECT * FROM kategori");
 
 // Pagination
@@ -20,6 +22,31 @@ $nomor = $halaman_awal + 1;
 $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori ORDER BY id_produk DESC LIMIT $halaman_awal, $batas_halaman");
 
 $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
+
+if (isset($_POST["tambah_keranjang"])) {
+    if (empty($_SESSION["username"]) || empty($_SESSION["email"])) {
+        echo "
+            <script>
+                alert('Login terlebih dahulu');
+            </script>
+        ";
+    } else {
+        if (tambah_keranjang($_POST) > 0) {
+            echo "
+            <script>
+                alert('Produk berhasil ditambahkan');
+            </script>
+        ";
+        } else {
+            echo "
+            <script>
+                alert('Produk gagal ditambahkan');
+            </script>
+        ";
+        }
+    }
+}
+
 // var_dump($jumlah_produk);
 // die;
 ?>
@@ -122,12 +149,19 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk");
                                             Rp. <?= $item["harga"] ?>
                                         </p>
                                     </div>
-                                    <a href="" class="btn btn-green m-3 d-none d-md-block">
-                                        Tambah ke Keranjang
-                                    </a>
-                                    <a href="" class="btn btn-green m-3 d-block d-md-none">
-                                        + Keranjang
-                                    </a>
+                                    <form action="" method="post">
+                                        <input type="hidden" name="id_produk" value="<?= $item["id_produk"] ?>">
+                                        <input type="hidden" name="id_user" value="<?= $user ?>">
+                                        <input type="hidden" name="jumlah_produk" value="1">
+                                        <input type="hidden" name="harga" value="<?= $item["harga"] ?>">
+
+                                        <button type="submit" name="tambah_keranjang" class="btn btn-green m-3 d-none d-md-block">
+                                            Tambah ke Keranjang
+                                        </button>
+                                        <button type="submit" name="tambah_keranjang" class="btn btn-green m-3 d-block d-md-none">
+                                            + Keranjang
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         <?php endforeach ?>

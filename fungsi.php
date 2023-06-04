@@ -297,6 +297,23 @@ function deleteKategori($id_kategori)
 
     return mysqli_affected_rows($koneksi);
 }
+// Tambah Keranjang
+function tambah_keranjang($data)
+{
+    global $koneksi;
+
+    $id_produk = htmlspecialchars($data["id_produk"]);
+    $id_user = htmlspecialchars($data["id_user"]);
+    $jumlah_produk = htmlspecialchars($data["jumlah_produk"]);
+    $harga = htmlspecialchars($data["harga"]);
+
+    $query = mysqli_query($koneksi, "INSERT INTO keranjang (id_keranjang, id_produk, id_user, jumlah_produk, harga) VALUES ('', '$id_produk','$id_user','$jumlah_produk','$harga')");
+
+    if ($query) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
+
 function formatKeRupiah($angka)
 {
     $hasi_rupiah = number_format($angka, 2, ',', '.');
