@@ -45,7 +45,7 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="ps-lg-5">
-                        <a href="#" class="mb-2 d-block text-green fw-500"><?= $produk[0]["nama_kategori"] ?></a>
+                        <a href="produkberdasarkan.php?katakunci=<?= $produk[0]["nama_kategori"] ?>" class="mb-2 d-block text-green fw-500"><?= $produk[0]["nama_kategori"] ?></a>
                         <h2 class="mb-3"><?= $produk[0]["nama_produk"] ?></h2>
                         <div class="mb-4"><span class="fw-500 text-dark">Rp. <?= $produk[0]["harga"] ?></span></div>
                         <p>Jumlah Item</p>
