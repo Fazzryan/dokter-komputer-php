@@ -223,9 +223,8 @@ td {
 }
 /* ============================= KATEGORI ===================== */
 #kategori .card:hover img{
-    
     transform: scale(1.09);
-    transition: .2s;
+    transition: all .2s ease-in-out;
 }
 #kategori .kat-link:hover {
     color: var(--color-green-1);
