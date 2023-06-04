@@ -3,8 +3,9 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
-$rekomendasi_produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori LIMIT 8");
+$kategori = show("SELECT * FROM kategori");
 
+$rekomendasi_produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori LIMIT 8");
 $aksesoris_headset = show("SELECT * FROM produk WHERE id_kategori = 4 LIMIT 3");
 $aksesoris_speaker = show("SELECT * FROM produk WHERE id_kategori = 5 LIMIT 3");
 $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3");
@@ -73,7 +74,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
             </div>
             <div class="row row-cols-1 row-cols-md-4 g-2 g-md-3 mt-0">
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/pc-acer-c22-1650-i3-ssd.png" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
@@ -83,7 +84,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/headset-hp-gaming-h220s.png" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
@@ -93,7 +94,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/intel-core-i910900k.jpg" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
@@ -103,7 +104,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/headset-logitech-gaming-g335-white.png" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
@@ -113,7 +114,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/sandisk32gbotg.png" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
@@ -123,7 +124,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     </a>
                 </div>
                 <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-                    <a href="#" class="kat-link">
+                    <a href="produkberdasarkan.php?katakunci=<?= $kategori[0]['nama_kategori']  ?>" class="kat-link">
                         <div class="card h-100">
                             <img src="fileUpload/speaker-logitech-z120.png" alt="Gambar Produk" class="w-50 mx-auto mt-2">
                             <div class="card-body">
