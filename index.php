@@ -199,12 +199,12 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     <?php foreach ($aksesoris_headset as $item) : ?>
                         <div class="d-flex mt-2">
                             <div class="flex-shrink-0 w-25">
-                                <a href="#">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>">
                                     <img src="fileUpload/<?= $item['gambar'] ?>" class="" alt="Gambar Produk" />
                                 </a>
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                <a href="#" class="text-decoration-none card-link fw-500">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
                                     <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
@@ -221,12 +221,12 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     <?php foreach ($aksesoris_speaker as $item) : ?>
                         <div class="d-flex mt-2">
                             <div class="flex-shrink-0 w-25">
-                                <a href="#">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>">
                                     <img src="fileUpload/<?= $item['gambar'] ?>" alt="Gambar Produk" />
                                 </a>
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                <a href="#" class="text-decoration-none card-link fw-500">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
                                     <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
@@ -244,12 +244,12 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                     <?php foreach ($aksesoris_flashdisk as $item) : ?>
                         <div class="d-flex mt-2">
                             <div class="flex-shrink-0 w-25">
-                                <a href="#">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>">
                                     <img src="fileUpload/<?= $item['gambar'] ?>" alt="Gambar Produk" />
                                 </a>
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                <a href="#" class="text-decoration-none card-link fw-500">
+                                <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
                                     <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
