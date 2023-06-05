@@ -3,7 +3,7 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
-$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
+$user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 $kategori = show("SELECT * FROM kategori");
 
 // Pagination
