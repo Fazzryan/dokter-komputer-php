@@ -149,11 +149,11 @@ if (isset($_POST["tambah_keranjang"])) {
                                             Rp. <?= $item["harga"] ?>
                                         </p>
                                     </div>
-                                    <form action="" method="post">
+                                    <form action="" method="post" class="mx-auto">
                                         <input type="hidden" name="id_produk" value="<?= $item["id_produk"] ?>">
                                         <input type="hidden" name="id_user" value="<?= $user ?>">
                                         <input type="hidden" name="jumlah_produk" value="1">
-                                        <input type="hidden" name="harga" value="<?= $item["harga"] ?>">
+                                        <input type="hidden" name="harga_produk" value="<?= $item["harga"] ?>">
 
                                         <button type="submit" name="tambah_keranjang" class="btn btn-green m-3 d-none d-md-block">
                                             Tambah ke Keranjang

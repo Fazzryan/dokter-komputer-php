@@ -305,15 +305,15 @@ function tambah_keranjang($data)
     $id_produk = htmlspecialchars($data["id_produk"]);
     $id_user = htmlspecialchars($data["id_user"]);
     $jumlah_produk = htmlspecialchars($data["jumlah_produk"]);
-    $harga = htmlspecialchars($data["harga"]);
+    $harga_produk = htmlspecialchars($data["harga_produk"]);
 
-    $query = mysqli_query($koneksi, "INSERT INTO keranjang (id_keranjang, id_produk, id_user, jumlah_produk, harga) VALUES ('', '$id_produk','$id_user','$jumlah_produk','$harga')");
+    $query = mysqli_query($koneksi, "INSERT INTO keranjang (id_keranjang, id_produk, id_user, jumlah_produk, harga_produk) VALUES ('', '$id_produk','$id_user','$jumlah_produk','$harga_produk')");
 
     if ($query) {
         return mysqli_affected_rows($koneksi);
     }
 }
- 
+
 function formatKeRupiah($angka)
 {
     $hasi_rupiah = number_format($angka, 2, ',', '.');

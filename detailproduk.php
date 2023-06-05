@@ -79,7 +79,7 @@ if (isset($_POST["tambah_keranjang"])) {
                             <div class="d-flex">
                                 <input type="hidden" name="id_produk" value="<?= $produk[0]["id_produk"] ?>">
                                 <input type="hidden" name="id_user" value="<?= $user ?>">
-                                <input type="hidden" name="harga" value="<?= $produk[0]["harga"] ?>">
+                                <input type="hidden" name="harga_produk" value="<?= $produk[0]["harga"] ?>">
 
                                 <input type="number" name="jumlah_produk" min="1" id="jumlah_produk" class="form-control w-50 me-2" value="1">
                                 <button type="submit" name="tambah_keranjang" class="btn btn-green w-50"><i class="bi bi-cart"></i> Tambah ke Keranjang</button>
