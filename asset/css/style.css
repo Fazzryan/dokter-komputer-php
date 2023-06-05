@@ -6,7 +6,6 @@
     --font-roboto: 'Roboto';
 
     --color-dark: #001e2b;
-    /* --color-light: #f0f3f2; */
     --color-default: #0c0c0b;
     --color-gray: #5c6c75;
     --color-gray-100: #f0f3f2;
@@ -14,10 +13,9 @@
     --color-gray-500: #889397;
     --color-gray-700: #3d4f58;
     --color-gray-800: #21313c;
-    --color-green: #044504;
-    --color-green-1: #0aad0a;
+    --color-green: #00AA5B;
     --color-green-light: #ceefce;
-    --color-green-hover: #088a08;
+    --color-green-hover: #098A4E;
     --color-blue: #016bf8;
 
     --color-brand: #5594FC;
@@ -30,7 +28,7 @@
     --bg-color-save: #41C3E0;
     --bg-color-setting: #46497D;
 
-    --border-color-green: #088a08;
+    --border-color-green: #00AA5B;
     --border-color-default: #E9E9E7;
 }
 
@@ -213,13 +211,13 @@ td {
 
 .nav-link.active {
     /* color: #FF7F3F !important; */
-    color: var(--color-green-1) !important;
+    color: var(--color-green) !important;
     font-weight: 500;
 }
 
 .nav-link:hover {
     transition: .1s ease-in-out;
-    color: var(--color-green-1) !important;
+    color: var(--color-green) !important;
 }
 /* ============================= KATEGORI ===================== */
 #kategori .card:hover img{
@@ -227,7 +225,7 @@ td {
     transition: all .2s ease-in-out;
 }
 #kategori .kat-link:hover {
-    color: var(--color-green-1);
+    color: var(--color-green);
 }
 /* ============================= REKOMENDASI PRODUK ===================== */
 
@@ -238,7 +236,7 @@ td {
     object-fit: contain;
 }
 #aksesoris  .card-link:hover {
-    color: var(--color-green-1);
+    color: var(--color-green);
 }
 /* ============================= MANFAAT BELANJA ===================== */
 #manfaat .box {
@@ -264,9 +262,9 @@ td {
 }
 /* ========================= KERANJANG ================== */
 .keranjang {
-    margin: 7rem 0;
+    margin: 7rem 0 14.1rem;
 }
-.keranjang img {
+.keranjang .keranjang_img {
     width: 120px;
 }
 /* =========================LOGIN & REGISTRASI ================== */
@@ -362,11 +360,11 @@ footer .footer-link:hover {
 }
 
 .text-green {
-    color: var(--color-green-1);
+    color: var(--color-green);
 }
 
 .btn-green {
-    background: var(--color-green-1);
+    background: var(--color-green);
     color: #fff;
     border-radius: 8px;
     transition: 0.3s;
@@ -402,7 +400,7 @@ footer .footer-link:hover {
 
 .card.card-produk:hover {
     box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
-    border: 1px solid var(--color-green-1);
+    border: 1px solid var(--color-green);
     /* border: 1px solid #0B6E99; */
 }
 
@@ -412,7 +410,7 @@ footer .footer-link:hover {
 }
 
 .card-link:hover {
-    color: var(--color-green-1);
+    color: var(--color-green);
     /* color: #FF7F3F; */
 }
 .card-text{
@@ -486,12 +484,12 @@ footer .footer-link:hover {
 }
 .page-link:hover {
     color: #fff;
-    background-color: var(--color-green-1);
-    border-color: var(--color-green-1);
+    background-color: var(--color-green);
+    border-color: var(--color-green);
 }
 .page-item.active .page-link {
-    background-color: var(--color-green-1);
-    border-color: var(--color-green-1);
+    background-color: var(--color-green);
+    border-color: var(--color-green);
 }
 .page-item.disabled .page-link {
     background-color: var(--color-gray-200);
@@ -661,8 +659,11 @@ footer .footer-link:hover {
     .keranjang {
         margin: 6rem 0;
     }
-    .keranjang img {
+    .keranjang .keranjang_img {
         width: 80px;
+    }
+    .keranjang .empty-cart p{
+        font-size: 14px;
     }
     /* =========================LOGIN & REGISTRASI ================== */
     .auth  {
