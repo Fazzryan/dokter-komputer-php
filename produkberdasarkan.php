@@ -2,6 +2,9 @@
 session_start();
 include "db/koneksi.php";
 include "fungsi.php";
+// var_dump($_SERVER["REQUEST_URI"]);
+// die;
+$url = $_SERVER["REQUEST_URI"];
 
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 $kategori = show("SELECT * FROM kategori");
@@ -74,18 +77,18 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                     </div>
                     <h5>Urut Berdasarkan</h5>
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-3">
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-bag-check"></i></div>
-                            <a href="#">Produk Terbaru</a>
-                        </div>
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-graph-down-arrow"></i></div>
-                            <a href="#">Harga Tertinggi ke Terendah</a>
-                        </div>
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-graph-up-arrow"></i></div>
-                            <a href="#">Harga Terendah ke Tertinggi</a>
-                        </div>
+                        <a href="<?= $url ?>&urut=Terbaru" class="kategori-item">
+                            <i class="bi bi-bag-check"></i>
+                            <span class="ms-2">Produk Terbaru</span>
+                        </a>
+                        <a href="<?= $url ?>&urut=Tertinggi" class="kategori-item">
+                            <i class="bi bi-graph-down-arrow"></i>
+                            <span class="ms-2">Harga Tertinggi ke Terendah</span>
+                        </a>
+                        <a href="<?= $url ?>&urut=Terendah" class="kategori-item">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span class="ms-2">Harga Terendah ke Tertinggi</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-9">

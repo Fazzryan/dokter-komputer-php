@@ -89,7 +89,7 @@ if (isset($_POST["tambah_keranjang"])) {
                                 <span class="ms-2"">Semua Produk</span>
                             </a>
                             <?php foreach ($kategori as $item) : ?>
-                                <a href=" produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item ">
+                                <a href=" produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item">
                                     <i class="bi <?= $item['icon_kategori'] ?>"></i>
                                     <span class="ms-2"><?= $item["nama_kategori"] ?></span>
                             </a>
@@ -98,18 +98,18 @@ if (isset($_POST["tambah_keranjang"])) {
                     </div>
                     <h5>Urut Berdasarkan</h5>
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-3">
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-bag-check"></i></div>
-                            <a href="#">Produk Terbaru</a>
-                        </div>
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-graph-down-arrow"></i></div>
-                            <a href="#">Harga Tertinggi ke Terendah</a>
-                        </div>
-                        <div class="kategori-item">
-                            <div class="me-2"><i class="bi bi-graph-up-arrow"></i></div>
-                            <a href="#">Harga Terendah ke Tertinggi</a>
-                        </div>
+                        <a href="#" class="kategori-item">
+                            <i class="bi bi-bag-check"></i>
+                            <span class="ms-2">Produk Terbaru</span>
+                        </a>
+                        <a href="#" class="kategori-item">
+                            <i class="bi bi-graph-down-arrow"></i>
+                            <span class="ms-2">Harga Tertinggi ke Terendah</span>
+                        </a>
+                        <a href="#" class="kategori-item">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span class="ms-2">Harga Terendah ke Tertinggi</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-9">
