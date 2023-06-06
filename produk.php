@@ -139,14 +139,14 @@ if (isset($_POST["tambah_keranjang"])) {
                                         <img src="fileUpload/<?= $item['gambar'] ?>" alt="Gambar Produk">
                                     </a>
                                     <div class="card-body h-100 mt-auto">
-                                        <a href="#" class="text-secondary text-decoration-none fs-14">
+                                        <a href="produkberdasarkan.php?katakunci=<?= $item['nama_kategori'] ?>" class="text-secondary text-decoration-none fs-14">
                                             <?= $item["nama_kategori"] ?>
                                         </a>
                                         <h5 class="card-title fs-15 mt-2">
-                                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '...', 45) ?></a>
+                                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '..', 45) ?></a>
                                         </h5>
                                         <p class="card-text fw-500 fs-15">
-                                            Rp. <?= $item["harga"] ?>
+                                            Rp. <?= formatKeRupiah($item["harga"]) ?>
                                         </p>
                                     </div>
                                     <form action="" method="post" class="mx-auto">
