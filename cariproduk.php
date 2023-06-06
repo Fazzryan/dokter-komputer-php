@@ -2,14 +2,11 @@
 session_start();
 include "db/koneksi.php";
 include "fungsi.php";
-// var_dump($_SERVER["REQUEST_URI"]);
-// die;
 
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 $kategori = show("SELECT * FROM kategori");
 $katakunci = $_POST["katakunci"];
-// var_dump($katakunci);
-// die;
+
 // Pagination
 $batas_halaman = 12;
 $halaman = isset($_GET["halaman"]) ? (int) $_GET["halaman"] : 1;
@@ -95,7 +92,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                 <div class="col-12 col-lg-9">
                     <div class="card mb-4 bg-light">
                         <div class="card-body p-4 ">
-                            <h2 class="mb-0"><?= $katakunci ?></h2>
+                            <h2 class="mb-0">Menampilkan hasil dari "<?= $katakunci ?>"</h2>
                         </div>
                     </div>
 
