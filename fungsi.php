@@ -314,6 +314,19 @@ function tambah_keranjang($data)
     }
 }
 
+// Hapus Keranjang
+function deleteKeranjang($data)
+{
+    global $koneksi;
+
+    $id_keranjang = $data["id_keranjang"];
+    $id_user = $data["id_user"];
+
+    $query =  mysqli_query($koneksi, "DELETE FROM keranjang WHERE id_keranjang = '$id_keranjang' AND id_user = '$id_user'");
+    if ($query) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
 function formatKeRupiah($angka)
 {
     $hasi_rupiah = number_format($angka, 2, ',', '.');

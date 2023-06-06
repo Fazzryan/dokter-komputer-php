@@ -21,6 +21,19 @@ foreach ($jumlah_produk as $x) {
     $total_harga = mysqli_fetch_row($harga);
     $qty = show("SELECT SUM(jumlah_produk) AS total FROM keranjang WHERE id_user = '$user'");
 }
+
+if (isset($_POST["hapus_keranjang"])) {
+    // var_dump($_POST);
+    // die;
+    if (deleteKeranjang($_POST) > 0) {
+        echo "
+        <script>
+            alert('Produk berhasil dihapus');
+            window.location.href='keranjang.php';
+        </script>
+    ";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +65,7 @@ foreach ($jumlah_produk as $x) {
                 </nav>
             </div>
             <div class="row justify-content-center mt-3 mt-md-5">
-                <?php if ($jumlah_produk < 1) : ?>
+                <?php if ($jumlah_produk[0] < 1) : ?>
                     <div class="col-12 col-lg-9 col-xl-7 text-center">
                         <img src="asset/img/empty_cart.svg" class="w-50" alt="icon">
                         <div class="mt-4 empty-cart">
@@ -78,8 +91,9 @@ foreach ($jumlah_produk as $x) {
                                 </div>
                                 <div class="col-2 text-end">
                                     <form action="" method="post">
-                                        <input type="hidden" name="slug" value="<?= $item['slug'] ?>">
-                                        <button type="submit" name="hapusCartProduk" class="btn btn-danger fs-14"><i class="bi bi-trash"></i></button>
+                                        <input type="hidden" name="id_keranjang" value="<?= $item['id_keranjang'] ?>">
+                                        <input type="hidden" name="id_user" value="<?= $item['id_user'] ?>">
+                                        <button type="submit" name="hapus_keranjang" class="btn btn-danger fs-14"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </div>
                             </div>
