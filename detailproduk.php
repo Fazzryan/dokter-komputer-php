@@ -3,7 +3,7 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
-$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
+$user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 $slug = $_GET["slug"];
 $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori WHERE slug = '$slug'");
 // var_dump($produk);

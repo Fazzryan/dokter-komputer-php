@@ -1,7 +1,9 @@
 <?php
+session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+$user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 // Pagination
 $batas_halaman = 16;
 $halaman = isset($_GET["halaman"]) ? (int) $_GET["halaman"] : 1;

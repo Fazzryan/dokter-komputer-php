@@ -3,6 +3,7 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
 $kategori = show("SELECT * FROM kategori");
 
 $rekomendasi_produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori LIMIT 8");

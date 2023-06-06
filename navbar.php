@@ -1,6 +1,12 @@
+<?php
+$jmlItemCart = show("SELECT COUNT(*) AS total FROM keranjang WHERE id_user = '$user'");
+var_dump($jmlItemCart[0]["total"]);
+// die;
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom">
     <div class="container py-2 ">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img src="asset/img/logo2.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +28,21 @@
                 </li>
             </ul>
             <ul class="navbar-nav flex-row">
-                <li class="nav-item me-3">
-                    <a class="btn btn-green position-relative" href="keranjang.php">
-                        <i class="bi bi-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            1
-                        </span>
+                <li class="nav-item me-2">
+                    <a class="btn btn-gray position-relative" href="keranjang.php">
+                        <i class="bi bi-cart-fill"></i>
+                        <?php if ($jmlItemCart[0]["total"] > 0) : ?>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="z-index: 999;">
+                                <?= $jmlItemCart[0]["total"] ?>
+                            </span>
+                        <?php endif ?>
                     </a>
                 </li>
                 <?php if (isset($_SESSION["username"])) : ?>
                     <li class="nav-item">
                         <div class="dropdown">
-                            <a class="btn btn-green dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person"></i>
+                            <a class="btn btn-gray dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-fill"></i>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li class="dropdown-item" href="dashboard/index.php"><i class="bi bi-house me-1"></i> Dashboard</a>
