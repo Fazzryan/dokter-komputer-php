@@ -103,9 +103,9 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                             <h6 class="fs-15"><?= $jumlah_produk[0]["jml_produk"] ?> <span class="text-gray">Produk ditemukan</span></h6>
                         </div>
                         <div class="col ">
-                            <form action="" method="get" class="d-flex mt-2 mt-md-0">
-                                <input type="text" class="form-control me-1 me-md-2" name="cari_produk" id="cari_produk" placeholder="Cari produk">
-                                <button type="submit" class="btn btn-green" style="border-radius: 8px;" name="btn_cari_produk"><i class="bi bi-search"></i></button>
+                            <form action="cariproduk.php" method="post" class="d-flex mt-2 mt-md-0">
+                                <input type="text" class="form-control me-1 me-md-2" name="katakunci" id="cari_produk" placeholder="Cari produk" required autocomplete="off">
+                                <button type="submit" class="btn btn-green" style="border-radius: 8px;"><i class="bi bi-search"></i></button>
                             </form>
                         </div>
                     </div>
