@@ -145,12 +145,19 @@ if (isset($_POST["tambah_keranjang"])) {
                                         <h5 class="card-title fs-15 mt-2">
                                             <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '..', 45) ?></a>
                                         </h5>
-                                        <p class="card-text fw-500 fs-15">
-                                            Rp. <?= formatKeRupiah($item["harga_normal"]) ?>
-                                        </p>
-                                        <p class="card-text fw-500 fs-15">
-                                            Rp. <?= formatKeRupiah($item["harga_diskon"]) ?>
-                                        </p>
+                                        <?php if ($item["harga_diskon"]) : ?>
+                                            <div class="card-text fw-500 fs-15">
+                                                Rp <?= formatKeRupiah($item["harga_diskon"]) ?>
+                                            </div>
+                                        <?php endif ?>
+
+                                        <div class="card-text fw-500 fs-15">
+                                            <?php if ($item["harga_diskon"] == 0) : ?>
+                                                Rp <?= formatKeRupiah($item["harga_normal"]) ?>
+                                            <?php else : ?>
+                                                <small>Normal <s class="text-gray">Rp <?= formatKeRupiah($item["harga_normal"]) ?></s></small>
+                                            <?php endif ?>
+                                        </div>
                                     </div>
                                     <form action="" method="post" class="mx-auto">
                                         <input type="hidden" name="id_produk" value="<?= $item["id_produk"] ?>">
