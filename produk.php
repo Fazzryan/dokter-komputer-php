@@ -125,7 +125,7 @@ if (isset($_POST["tambah_keranjang"])) {
                         </div>
                         <div class="col">
                             <form action="cariproduk.php" method="post" class="d-flex mt-2 mt-md-0">
-                                <input type="text" class="form-control me-1 me-md-2" name="katakunci" id="cari_produk" placeholder="Cari produk" required autocomplete="off">
+                                <input type="text" class="form-control me-1 me-md-2" name="katakunci" id="cari_produk" maxlength="50" placeholder="Cari produk" required autocomplete="off">
                                 <button type="submit" class="btn btn-green" style="border-radius: 8px;"><i class="bi bi-search"></i></button>
                             </form>
                         </div>
