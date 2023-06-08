@@ -146,14 +146,17 @@ if (isset($_POST["tambah_keranjang"])) {
                                             <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '..', 45) ?></a>
                                         </h5>
                                         <p class="card-text fw-500 fs-15">
-                                            Rp. <?= formatKeRupiah($item["harga"]) ?>
+                                            Rp. <?= formatKeRupiah($item["harga_normal"]) ?>
+                                        </p>
+                                        <p class="card-text fw-500 fs-15">
+                                            Rp. <?= formatKeRupiah($item["harga_diskon"]) ?>
                                         </p>
                                     </div>
                                     <form action="" method="post" class="mx-auto">
                                         <input type="hidden" name="id_produk" value="<?= $item["id_produk"] ?>">
                                         <input type="hidden" name="id_user" value="<?= $user ?>">
                                         <input type="hidden" name="jumlah_produk" value="1">
-                                        <input type="hidden" name="harga_produk" value="<?= $item["harga"] ?>">
+                                        <input type="hidden" name="harga_produk" value="<?= $item["harga_normal"] ?>">
 
                                         <button type="submit" name="tambah_keranjang" class="btn btn-green m-3 d-none d-md-block">
                                             Tambah ke Keranjang

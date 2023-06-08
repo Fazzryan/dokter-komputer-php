@@ -162,7 +162,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                     <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link"><?= $item["nama_produk"] ?></a>
                                 </h5>
                                 <p class="card-text fw-500">
-                                    Rp. <?= $item["harga"] ?>
+                                    Rp. <?= formatKeRupiah($item["harga_normal"]) ?>
                                 </p>
                             </div>
                             <a href="" class="btn btn-green m-3 d-none d-md-block">
@@ -208,7 +208,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                 <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
-                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
+                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= formatKeRupiah($item["harga_normal"]) ?></span>
                                 </a>
                             </div>
                         </div>
@@ -230,7 +230,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                 <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
-                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
+                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= formatKeRupiah($item["harga_normal"]) ?></span>
                                 </a>
                             </div>
                         </div>
@@ -253,7 +253,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                 <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="text-decoration-none card-link fw-500">
                                     <?= $item["nama_produk"] ?>
                                     <br />
-                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= $item["harga"] ?></span>
+                                    <span class="fw-500" style="color: #4e54c8">Rp. <?= formatKeRupiah($item["harga_normal"]) ?></span>
                                 </a>
                             </div>
                         </div>
