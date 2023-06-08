@@ -95,23 +95,6 @@ td {
     margin-top: 6.9rem;
     margin-bottom: 4rem;
 }
-.kategori-item {
-    display: flex;
-    padding: 8px;
-    margin: 4px;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color-gray-500);
-    border-radius: 8px;
-    cursor: pointer;
-}
-.kategori-item:hover{
-    background-color: var(--color-gray-200);
-    color: var(--color-gray-800);
-}
-.kategori-item a {
-    color: var(--color-gray);
-}
 
 /* =============================== SIDEBAR ==================== */
 .wrapper {
@@ -219,6 +202,20 @@ td {
     transition: .1s ease-in-out;
     color: var(--color-green) !important;
 }
+
+/* ============================= DROPDOWN ===================== */
+.dropdown .dropdown-menu li  {
+    margin: 4px 0;
+    padding: 0 10px; 
+}
+.dropdown .dropdown-item {
+    color: var(--color-gray-500);
+}
+.dropdown .dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-800);
+    border-radius: 8px;
+  }
 /* ============================= KATEGORI ===================== */
 #kategori .card:hover img{
     transform: scale(1.09);
@@ -227,6 +224,21 @@ td {
 #kategori .kat-link:hover {
     color: var(--color-green);
 }
+.kategori-item {
+    display: flex;
+    padding: 8px;
+    margin: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-gray-500);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.kategori-item:hover{
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-800);
+}
+
 /* ============================= REKOMENDASI PRODUK ===================== */
 
 /* ============================= AKSESORIS ===================== */
@@ -571,6 +583,9 @@ footer .footer-link:hover {
 /* ======================= BORDER & SHADOW ================ */
 .rounded-100 {
     border-radius: 100px;
+}
+.rounded-8 {
+    border-radius: 0.5rem;
 }
 .rounded-16 {
     border-radius: 1rem;

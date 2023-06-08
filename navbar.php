@@ -44,11 +44,11 @@ var_dump($jmlItemCart[0]["total"]);
                             <a class="btn btn-gray dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person-fill"></i>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li class="dropdown-item" href="dashboard/index.php"><i class="bi bi-house me-1"></i> Dashboard</a>
-                                </li>
+                            <ul class="dropdown-menu shadow-1 border rounded-8 mt-2" aria-labelledby="dropdownMenuLink">
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <a class="dropdown-item" href="dashboard/index.php">
+                                        <i class="bi bi-house me-1"></i> Dashboard
+                                    </a>
                                 </li>
                                 <li><a class="dropdown-item" href="otentikasi/logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a></li>
                             </ul>
