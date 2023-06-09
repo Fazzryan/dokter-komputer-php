@@ -124,17 +124,14 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                                         </h5>
                                         <?php if ($item["harga_diskon"]) : ?>
                                             <div class="card-text fw-500 fs-15">
-                                                Rp <?= formatKeRupiah($item["harga_diskon"]) ?>
+                                                Rp<?= formatKeRupiah($item["harga_diskon"]) ?>
+                                            </div>
+                                            <small>Normal <s class="text-gray">Rp<?= formatKeRupiah($item["harga_normal"]) ?></s></small>
+                                        <?php else : ?>
+                                            <div class="card-text fw-500 fs-15">
+                                                Rp<?= formatKeRupiah($item["harga_normal"]) ?>
                                             </div>
                                         <?php endif ?>
-
-                                        <div class="card-text fw-500 fs-15">
-                                            <?php if ($item["harga_diskon"] == 0) : ?>
-                                                Rp <?= formatKeRupiah($item["harga_normal"]) ?>
-                                            <?php else : ?>
-                                                <small>Normal <s class="text-gray">Rp <?= formatKeRupiah($item["harga_normal"]) ?></s></small>
-                                            <?php endif ?>
-                                        </div>
                                     </div>
                                     <a href="" class="btn btn-green m-3 d-none d-md-block">
                                         Tambah ke Keranjang

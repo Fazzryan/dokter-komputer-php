@@ -73,7 +73,16 @@ if (isset($_POST["tambah_keranjang"])) {
                     <div class="ps-lg-5">
                         <a href="produkberdasarkan.php?katakunci=<?= $produk[0]["nama_kategori"] ?>" class="mb-2 d-block text-green fw-500"><?= $produk[0]["nama_kategori"] ?></a>
                         <h2 class="mb-3"><?= $produk[0]["nama_produk"] ?></h2>
-                        <div class="mb-4"><span class="fw-500 text-dark">Rp. <?= $produk[0]["harga"] ?></span></div>
+                        <div class="d-flex mb-4">
+                            <?php if ($produk[0]["harga_diskon"]) : ?>
+                                <span class="fw-500 text-dark">Rp<?= formatKeRupiah($produk[0]["harga_diskon"]) ?></span>
+                            <?php endif ?>
+                            <?php if (!$produk[0]["harga_diskon"]) : ?>
+                                <span class="fw-500 text-dark">Rp<?= formatKeRupiah($produk[0]["harga_normal"]) ?></span>
+                            <?php else : ?>
+                                <small class="fw-500 text-muted ms-2"><s>Rp<?= formatKeRupiah($produk[0]["harga_normal"]) ?></s></small>
+                            <?php endif ?>
+                        </div>
                         <p>Jumlah Item</p>
                         <form action="" method="post">
                             <div class="d-flex">

@@ -147,17 +147,14 @@ if (isset($_POST["tambah_keranjang"])) {
                                         </h5>
                                         <?php if ($item["harga_diskon"]) : ?>
                                             <div class="card-text fw-500 fs-15">
-                                                Rp <?= formatKeRupiah($item["harga_diskon"]) ?>
+                                                Rp<?= formatKeRupiah($item["harga_diskon"]) ?>
+                                            </div>
+                                            <small>Normal <s class="text-gray">Rp<?= formatKeRupiah($item["harga_normal"]) ?></s></small>
+                                        <?php else : ?>
+                                            <div class="card-text fw-500 fs-15">
+                                                Rp<?= formatKeRupiah($item["harga_normal"]) ?>
                                             </div>
                                         <?php endif ?>
-
-                                        <div class="card-text fw-500 fs-15">
-                                            <?php if ($item["harga_diskon"] == 0) : ?>
-                                                Rp <?= formatKeRupiah($item["harga_normal"]) ?>
-                                            <?php else : ?>
-                                                <small>Normal <s class="text-gray">Rp <?= formatKeRupiah($item["harga_normal"]) ?></s></small>
-                                            <?php endif ?>
-                                        </div>
                                     </div>
                                     <form action="" method="post" class="mx-auto">
                                         <input type="hidden" name="id_produk" value="<?= $item["id_produk"] ?>">
