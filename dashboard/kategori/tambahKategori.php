@@ -84,7 +84,7 @@ if (isset($_POST["tambah"])) {
                                 </ol>
                             </nav>
                         </div>
-                        <a href="index.php" class="btn btn-gray">Kembali ke Kategori</a>
+                        <a href="index.php" class="btn btn-gray fw-500">Kembali ke Kategori</a>
                     </div>
 
                     <div class="row mt-3 mt-md-4">

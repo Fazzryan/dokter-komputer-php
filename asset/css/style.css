@@ -10,6 +10,7 @@
     --color-gray: #5c6c75;
     --color-gray-100: #f0f3f2;
     --color-gray-200: #ecf0ef;
+    --color-gray-300: #cccfce;
     --color-gray-500: #889397;
     --color-gray-700: #3d4f58;
     --color-gray-800: #21313c;
@@ -18,18 +19,9 @@
     --color-green-hover: #098A4E;
     --color-blue: #016bf8;
 
-    --color-brand: #5594FC;
-    --color-cansel: #FF668E;
-    --color-save: #4DD0E1;
-    --color-setting: #4D537D;
-
-    --bg-color-brand: #437CF7;
-    --bg-color-cansel: #FF5E81;
-    --bg-color-save: #41C3E0;
-    --bg-color-setting: #46497D;
-
     --border-color-green: #00AA5B;
     --border-color-default: #E9E9E7;
+    --border-color-3: #c0c2c2;
 }
 
 body {
@@ -294,83 +286,6 @@ footer .footer-link:hover {
 }
 
 /* ============================ BUTTON & TEXT===================== */
-.btn-main {
-    background: #4e54c8;
-    color: #fff;
-    box-shadow: 4px 10px 12px -8px rgb(55, 55, 249);
-    transition: 0.4s;
-}
-
-.btn-main:hover {
-    background: #fe696a;
-    color: #fff;
-    box-shadow: none;
-}
-
-.text-brand {
-    color: var(-color-brand);
-}
-
-.btn-brand {
-    background: var(--bg-color-brand);
-    color: var(-color-light);
-    transition: 0.3s;
-}
-
-.btn-brand:hover {
-    color: var(-color-light);
-    transform: scale(1.03);
-    box-shadow: 0 10px 13px -4px var(--bg-color-brand);
-}
-
-.text-setting {
-    color: var(-color-setting);
-}
-
-.btn-setting {
-    background: var(--bg-color-setting);
-    color: var(-color-light);
-    transition: 0.3s;
-}
-
-.btn-setting:hover {
-    color: var(-color-light);
-    transform: scale(1.03);
-    box-shadow: 0 10px 13px -4px var(--bg-color-setting);
-}
-
-.text-cansel {
-    color: var(-color-cansel);
-}
-
-.btn-cansel {
-    background: var(--bg-color-cansel);
-    color: var(--color-light);
-    transition: 0.3s;
-}
-
-.btn-cansel:hover {
-    color: var(-color-light);
-    transform: scale(1.03);
-    box-shadow: 0 10px 13px -4px var(--bg-color-cansel);
-}
-
-.text-blue {
-    color: var(-color-blue);
-}
-
-.btn-blue {
-    background: var(--color-blue);
-    color: var(--color-light);
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.btn-blue:hover {
-    color: var(-color-blue);
-    opacity: 0.7;
-}
-
 .text-green {
     color: var(--color-green);
 }
@@ -394,12 +309,14 @@ footer .footer-link:hover {
 .btn-gray {
     background: var(--color-gray-100);
     color: var(--color-gray-800);
+    border-radius: 8px;
     transition: 0.2s;
 }
 
 .btn-gray:hover {
-    background: var(--color-gray-700);
-    color: #fff;
+    background: var(--color-gray-300);
+    border-color: var(--border-color-3);
+    color: #000;
     opacity: 0.9;
 }
 
