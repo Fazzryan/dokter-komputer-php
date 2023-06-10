@@ -32,7 +32,7 @@ if (isset($_POST["edit"])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- CK Editor -->
     <script src="../../asset/library/ckeditor/ckeditor.js"></script>
-    <title>Tambah Produk - Dokter Komputer</title>
+    <title>Edit Produk - Dokter Komputer</title>
 </head>
 
 <body class="bg-white">
@@ -93,7 +93,7 @@ if (isset($_POST["edit"])) {
                             </nav>
                         </div>
                         <div class="col-12 col-md-6 text-end">
-                            <a href="index.php" class="btn btn-gray fw-500">Kembali</a>
+                            <a href="index.php" class="btn btn-gray fw-500">Kembali ke Produk</a>
                         </div>
                     </div>
 
@@ -132,10 +132,10 @@ if (isset($_POST["edit"])) {
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <!-- Harga -->
+                                            <!-- Stok -->
                                             <div class="mb-3">
-                                                <label for="harga" class="form-label fw-500">Harga</label>
-                                                <input type="text" class="form-control" id="harga" name="harga" required placeholder="Rp. " autocomplete="off" value="<?= $produk[0]["harga"] ?>">
+                                                <label for="stok" class="form-label fw-500">Stok Produk</label>
+                                                <input type="number" class="form-control" id="stok" name="stok" required placeholder="Rp. " autocomplete="off" value="<?= $produk[0]["stok"] ?>">
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">
@@ -169,22 +169,26 @@ if (isset($_POST["edit"])) {
                                             <input type="file" class="dropzone" id="gambar" name="gambar">
                                         </div>
                                         <!-- Deskripsi -->
-                                        <!-- <div class="mb-3">
+                                        <div class="mb-3">
                                             <label for="deskripsi" class="form-label fw-500">Deskripsi Produk</label>
                                             <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required><?= $produk[0]["deskripsi"] ?></textarea>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-12 col-lg-4">
-                                <div class="card p-2 p-md-3 border-0 shadow-1 rounded-16">
-                                    <!-- Deskripsi -->
+                                <div class="card p-2 p-md-3 mt-3 border-0 shadow-1 rounded-16">
+                                    <!-- Harga Normal-->
                                     <div class="mb-3">
-                                        <label for="deskripsi" class="form-label fw-500">Deskripsi Produk</label>
-                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required><?= $produk[0]["deskripsi"] ?></textarea>
+                                        <label for="harga_normal" class="form-label fw-500">Harga Normal</label>
+                                        <input type="text" class="form-control" id="harga_normal" name="harga_normal" required placeholder="Rp. " autocomplete="off" value="<?= $produk[0]["harga_normal"] ?>">
                                     </div>
-                                    <!-- Tombol -->
+                                    <!-- Harga Diskon-->
+                                    <div class="mb-3">
+                                        <label for="harga_diskon" class="form-label fw-500">Harga Diskon</label>
+                                        <input type="text" class="form-control" id="harga_diskon" name="harga_diskon" placeholder="Rp. " autocomplete="off" value="<?= $produk[0]["harga_diskon"] ?>">
+                                    </div>
                                 </div>
                                 <div class="my-3">
                                     <button type="submit" name="edit" class="btn btn-green w-100">Edit Produk</button>
@@ -192,13 +196,10 @@ if (isset($_POST["edit"])) {
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <script src="../../asset/js/bootstrap.js"></script>
     <script src="../../asset/js/script.js"></script>
@@ -229,13 +230,12 @@ if (isset($_POST["edit"])) {
             return rupiah;
         }
 
-        let harga = document.getElementById("harga");
-        // harga sekarang
-        harga.value = formatRupiah(harga.value);
-
-        harga.addEventListener("keyup", function() {
-            harga.value = formatRupiah(this.value);
-        });
+        // let harga = document.getElementById("harga");
+        //  harga sekarang
+        // harga.value = formatRupiah(harga.value);
+        // harga.addEventListener("keyup", function() {
+        //     harga.value = formatRupiah(this.value);
+        // });
     </script>
 </body>
 

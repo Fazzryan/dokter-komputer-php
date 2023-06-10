@@ -100,7 +100,7 @@ if (isset($_POST["tambah"])) {
                             </nav>
                         </div>
                         <div class="col-12 col-md-6 text-end">
-                            <a href="index.php" class="btn btn-gray fw-500">Kembali</a>
+                            <a href="index.php" class="btn btn-gray fw-500">Kembali ke Produk</a>
                         </div>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data" class="mb-3">
@@ -135,10 +135,10 @@ if (isset($_POST["tambah"])) {
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <!-- Harga -->
+                                            <!-- Stok -->
                                             <div class="mb-3">
-                                                <label for="harga" class="form-label fw-500">Harga</label>
-                                                <input type="text" class="form-control" id="harga" name="harga" required placeholder="Rp. " autocomplete="off">
+                                                <label for="stok" class="form-label fw-500">Stok Produk</label>
+                                                <input type="number" class="form-control" id="stok" name="stok" value="1" required>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6">
@@ -173,17 +173,17 @@ if (isset($_POST["tambah"])) {
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div class="card p-2 p-md-3 border-0 shadow-1 rounded-16">
-                                    <!-- Deskripsi -->
-                                    <!-- <div class="mb-3">
-                                            <label for="deskripsi" class="form-label fw-500">Deskripsi Produk</label>
-                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
-                                        </div> -->
-                                    <!-- Gambar -->
-                                    <!-- <div class="mb-3">
-                                        <label for="gambar" class="form-label fw-500">Gambar Produk</label>
-                                        <input type="file" class="form-control" id="gambar" name="gambar" required>
-                                    </div> -->
+                                <div class="card p-2 p-md-3 mt-3 border-0 shadow-1 rounded-16">
+                                    <!-- Harga Normal-->
+                                    <div class="mb-3">
+                                        <label for="harga_normal" class="form-label fw-500">Harga Normal</label>
+                                        <input type="text" class="form-control" id="harga_normal" name="harga_normal" required placeholder="Rp. " autocomplete="off">
+                                    </div>
+                                    <!-- Harga Diskon-->
+                                    <div class="mb-3">
+                                        <label for="harga_diskon" class="form-label fw-500">Harga Diskon</label>
+                                        <input type="text" class="form-control" id="harga_diskon" name="harga_diskon" placeholder="Rp. " autocomplete="off">
+                                    </div>
                                 </div>
                                 <!-- Tombol -->
                                 <div class="my-3">

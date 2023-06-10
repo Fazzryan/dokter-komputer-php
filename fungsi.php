@@ -75,12 +75,14 @@ function addProduk($data)
     $nama_produk = htmlspecialchars($data["nama_produk"]);
     $slug = htmlspecialchars($data["slug"]);
     $id_kategori = htmlspecialchars($data["id_kategori"]);
-    $harga = htmlspecialchars($data["harga"]);
+    $harga_normal = htmlspecialchars($data["harga_normal"]);
+    $harga_diskon = htmlspecialchars($data["harga_diskon"]);
+    $stok = htmlspecialchars($data["stok"]);
     $kondisi = htmlspecialchars($data["kondisi"]);
     $berat = htmlspecialchars($data["berat"]);
     $deskripsi = $data["deskripsi"];
 
-    if ($nama_produk == "" || $slug == "" || $id_kategori == "" || $harga == "" || $kondisi == "" || $berat == "" || $deskripsi == "") {
+    if ($nama_produk == "" || $slug == "" || $id_kategori == "" || $harga_normal == "" || $kondisi == "" || $berat == "" || $deskripsi == "") {
         echo "
             <script>
                 alert('Lengkapi semua data!')
@@ -137,8 +139,8 @@ function addProduk($data)
         // Jika $upload_berhasil = 1 maka coba upload file
     } else {
         if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file)) {
-            $query = mysqli_query($koneksi, "INSERT INTO produk (id_produk, nama_produk, slug, id_kategori, harga, kondisi, berat, deskripsi, gambar) 
-            VALUES ('','$nama_produk','$slug' ,'$id_kategori','$harga','$kondisi','$berat','$deskripsi','$gambar')");
+            $query = mysqli_query($koneksi, "INSERT INTO produk (id_produk, nama_produk, slug, id_kategori, harga_normal, harga_diskon, stok, kondisi, berat, deskripsi, gambar) 
+            VALUES ('','$nama_produk','$slug' ,'$id_kategori','$harga_normal','$harga_diskon', '$stok','$kondisi','$berat','$deskripsi','$gambar')");
             if ($query) {
                 return mysqli_affected_rows($koneksi);
             } else {
@@ -159,12 +161,14 @@ function editProduk($data)
     $nama_produk = htmlspecialchars($data["nama_produk"]);
     $slug = htmlspecialchars($data["slug"]);
     $id_kategori = htmlspecialchars($data["id_kategori"]);
-    $harga = htmlspecialchars($data["harga"]);
+    $harga_normal = htmlspecialchars($data["harga_normal"]);
+    $harga_diskon = htmlspecialchars($data["harga_diskon"]);
+    $stok = htmlspecialchars($data["stok"]);
     $kondisi = htmlspecialchars($data["kondisi"]);
     $berat = htmlspecialchars($data["berat"]);
     $deskripsi = $data["deskripsi"];
 
-    if ($nama_produk == "" || $slug == "" || $id_kategori == "" || $harga == "" || $kondisi == "" || $berat == "" || $deskripsi == "") {
+    if ($nama_produk == "" || $slug == "" || $id_kategori == "" || $harga_normal == "" || $kondisi == "" || $berat == "" || $deskripsi == "") {
         echo "
             <script>
                 alert('Lengkapi semua data!')
@@ -228,7 +232,7 @@ function editProduk($data)
         ";
         // Jika $upload_berhasil = 1 maka coba upload file
     } else {
-        $simpan = mysqli_query($koneksi, "UPDATE produk SET id_produk='$id_produk', nama_produk='$nama_produk', id_kategori='$id_kategori', harga='$harga', kondisi='$kondisi', berat='$berat',  deskripsi='$deskripsi', gambar='$updateGambar' WHERE slug = '$slug'");
+        $simpan = mysqli_query($koneksi, "UPDATE produk SET id_produk='$id_produk', nama_produk='$nama_produk', id_kategori='$id_kategori', harga_normal='$harga_normal',harga_diskon='$harga_diskon', stok='$stok', kondisi='$kondisi', berat='$berat',  deskripsi='$deskripsi', gambar='$updateGambar' WHERE slug = '$slug'");
         if ($simpan) {
             if ($_FILES["gambar"]["name"] != '') {
                 move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file);
