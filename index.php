@@ -161,9 +161,18 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                 <h5 class="card-title fs-15 mt-2">
                                     <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link"><?= $item["nama_produk"] ?></a>
                                 </h5>
-                                <p class="card-text fw-500">
-                                    Rp. <?= formatKeRupiah($item["harga_normal"]) ?>
-                                </p>
+                                <div class="d-md-flex justify-content-between">
+                                    <?php if ($item["harga_diskon"]) : ?>
+                                        <div class="card-text fw-500 fs-15">
+                                            Rp<?= formatKeRupiah($item["harga_diskon"]) ?>
+                                        </div>
+                                        <small><s class="text-muted">Rp<?= formatKeRupiah($item["harga_normal"]) ?></s></small>
+                                    <?php else : ?>
+                                        <div class="card-text fw-500 fs-15">
+                                            Rp<?= formatKeRupiah($item["harga_normal"]) ?>
+                                        </div>
+                                    <?php endif ?>
+                                </div>
                             </div>
                             <a href="" class="btn btn-green m-3 d-none d-md-block">
                                 Tambah ke Keranjang
@@ -180,7 +189,7 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
             <div class="row">
                 <div class="col-12">
                     <div class="py-4 text-center text-xl-end d-block d-md-none">
-                        <a href="produk.php" class="btn btn-green">Lihat semua produk <i class="fa-solid fa-right-long"></i>
+                        <a href="produk.php" class="btn btn-green fs-15">Lihat semua produk <i class="fa-solid fa-right-long"></i>
                         </a>
                     </div>
                 </div>

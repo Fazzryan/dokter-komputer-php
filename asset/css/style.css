@@ -168,17 +168,17 @@ td {
     z-index: 999;
     /* border-bottom: 1px solid var(--border-color-default); */
 }
-
+.content-header-on{
+    /* background-color: #fff; */
+    backdrop-filter: blur(5px);
+    background-color: hsla(0,0%,100%,.8);
+}
 #content .content-body {
     padding: 1.5rem;
     margin-top: 90px;
 }
 
 /* ============================= NAVBAR ===================== */
-/* .nav-shadow {
-    transition: .2s ease-in-out;
-    background-color: white;
-} */
 
 .nav-link {
     color: #000 !important;

@@ -34,10 +34,10 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
 <body class="bg-white">
     <div class="wrapper">
         <!-- Sidebar -->
-        <nav id="sidebar" class="">
+        <nav id="sidebar">
             <ul class="navbar-nav">
                 <div class="side-header">
-                    <a href="../../index.php" class="fs-24 fw-500">Dokter Komputer</a>
+                    <a href="../../index.php" class="fs-20 fw-500">Dokter Komputer</a>
                     <button type="button" class="btn-close d-xl-none" aria-label="Close"></button>
                 </div>
                 <li class="nav-item">
@@ -127,8 +127,14 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                                                     <td><?= $item["nama_produk"] ?></td>
                                                     <td><?= $item["nama_kategori"] ?></td>
                                                     <td><?= $item["kondisi"] ?></td>
-                                                    <td>Rp. <?= $item["harga_normal"] ?></td>
-                                                    <td>Rp. <?= $item["harga_diskon"] ?></td>
+                                                    <td>Rp<?= formatKeRupiah($item["harga_normal"]) ?></td>
+                                                    <td>
+                                                        <?php if (!$item["harga_diskon"]) : ?>
+                                                            Rp0
+                                                        <?php else : ?>
+                                                            Rp<?= formatKeRupiah($item["harga_diskon"]) ?>
+                                                        <?php endif ?>
+                                                    </td>
                                                     <td colspan="">
                                                         <a href="editProduk.php?slug=<?= $item["slug"] ?>" class="btn btn-gray"><i class="bi bi-pencil"></i></a>
                                                         <a href="hapus.php?slug=<?= $item["slug"] ?>" onclick="return confirm('Yakin hapus?')" class="btn btn-gray"><i class="bi bi-trash"></i></a>

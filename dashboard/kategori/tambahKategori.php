@@ -95,6 +95,10 @@ if (isset($_POST["tambah"])) {
                                         <label for="nama_kategori" class="form-label fw-500">Nama Kategori</label>
                                         <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" required autocomplete="off" autofocus>
                                     </div>
+                                    <div class=" mb-3">
+                                        <label for="icon_kategori" class="form-label fw-500">Icon Kategori</label>
+                                        <input type="text" class="form-control" id="icon_kategori" name="icon_kategori" required autocomplete="off" autofocus>
+                                    </div>
                                     <div class="mb-3">
                                         <button type="submit" name="tambah" class="btn btn-green">Tambah Kategori</button>
                                     </div>

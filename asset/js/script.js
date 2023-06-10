@@ -8,16 +8,14 @@
 //         navbar.classList.remove("shadow-sm");
 //     }
 // });
-// window.addEventListener("scroll", function () {
-//     const navbar = document.querySelector('.navbar');
-//     if (window.pageYOffset > 0) {
-//         navbar.classList.add("nav-shadow");
-//         navbar.classList.add("shadow-sm");
-//     } else {
-//         navbar.classList.remove("nav-shadow");
-//         navbar.classList.remove("shadow-sm");
-//     }
-// });
+window.addEventListener("scroll", function () {
+    const contentHeader = document.querySelector('.content-header');
+    if (window.pageYOffset > 0) {
+        contentHeader.classList.add("content-header-on");
+    } else {
+        contentHeader.classList.remove("content-header-on");
+    }
+});
 
 const navbarNav = document.querySelector('.navbar-nav');
 const content = document.querySelector('#content');

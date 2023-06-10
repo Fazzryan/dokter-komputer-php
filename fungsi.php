@@ -260,15 +260,16 @@ function addKategori($data)
     global $koneksi;
 
     $nama_kategori = htmlspecialchars($data["nama_kategori"]);
-    if ($nama_kategori == "") {
+    $icon_kategori = htmlspecialchars($data["icon_kategori"]);
+    if ($nama_kategori == "" ||  $icon_kategori  ==  "") {
         echo "
             <script>
-                alert('Nama kategori harus di isi!')
+                alert('semua form harus di isi!')
             </script>
         ";
         return;
     }
-    $query = "INSERT INTO kategori (id_kategori, nama_kategori) VALUES ('','$nama_kategori')";
+    $query = "INSERT INTO kategori (id_kategori, nama_kategori, icon_kategori) VALUES ('','$nama_kategori', '$icon_kategori')";
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);

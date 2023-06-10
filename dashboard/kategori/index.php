@@ -133,6 +133,7 @@ if (isset($_POST["hapus"])) {
                                             <tr>
                                                 <th class="fw-500">No</th>
                                                 <th class="fw-500">Nama Kategori</th>
+                                                <th class="fw-500">Icon</th>
                                                 <th class="fw-500">Jumlah Produk</th>
                                                 <th class="fw-500">Aksi</th>
                                             </tr>
@@ -142,6 +143,7 @@ if (isset($_POST["hapus"])) {
                                                 <tr>
                                                     <td scope="row"><?= $nomor  ?></td>
                                                     <td><?= $item["nama_kategori"] ?></td>
+                                                    <td><?= $item["icon_kategori"] ?></td>
                                                     <td class="fw-500">
                                                         <?php $jumlah_produk = show("SELECT COUNT(*) as jumlah FROM produk WHERE id_kategori = $item[id_kategori]");
                                                         echo ($jumlah_produk[0]['jumlah']); ?>
