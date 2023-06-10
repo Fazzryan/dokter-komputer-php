@@ -36,7 +36,7 @@ if (isset($_POST["tambah"])) {
         <nav id="sidebar" class="">
             <ul class="navbar-nav">
                 <div class="side-header">
-                    <h5>Dokter Komputer</h5>
+                    <a href="../../index.php" class="fs-20 fw-500">Dokter Komputer</a>
                     <button type="button" class="btn-close d-xl-none" aria-label="Close"></button>
                 </div>
                 <li class="nav-item">
@@ -52,7 +52,19 @@ if (isset($_POST["tambah"])) {
                     <a href="../kategori/" class="side-link on"><i class="bi bi-list-ul me-2"></i> Kategori</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="side-link"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+                    <a href="#" class="side-link"><i class="bi bi-bag me-2"></i> Pesanan</a>
+                </li>
+                <li class="nav-item my-3 ps-3">
+                    <span class="nav-label">Setting Site</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-newspaper me-2"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-images me-2"></i> Media</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-gear me-2"></i> Pengaturan Toko</a>
                 </li>
             </ul>
         </nav>
@@ -98,6 +110,7 @@ if (isset($_POST["tambah"])) {
                                     <div class=" mb-3">
                                         <label for="icon_kategori" class="form-label fw-500">Icon Kategori</label>
                                         <input type="text" class="form-control" id="icon_kategori" name="icon_kategori" required autocomplete="off" autofocus>
+                                        <div class="mt-2 fs-14" style="font-style:italic;">Gunakan <a href="https://icons.getbootstrap.com/https://icons.getbootstrap.com/" class="text-primary">Bootstrap Icon.</a></div>
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="tambah" class="btn btn-green">Tambah Kategori</button>

@@ -282,8 +282,9 @@ function editKategori($data)
 
     $id_kategori = htmlspecialchars($data["id_kategori"]);
     $nama_kategori = htmlspecialchars($data["nama_kategori"]);
+    $icon_kategori = htmlspecialchars($data["icon_kategori"]);
 
-    $query = "UPDATE kategori SET nama_kategori = '$nama_kategori' WHERE id_kategori = '$id_kategori'";
+    $query = "UPDATE kategori SET nama_kategori = '$nama_kategori', icon_kategori = '$icon_kategori' WHERE id_kategori = '$id_kategori'";
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
