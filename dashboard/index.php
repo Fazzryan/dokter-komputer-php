@@ -29,11 +29,11 @@ $total_kategori = show("SELECT COUNT(*) AS total FROM kategori");
             <!-- <hr class="text-secondary"> -->
             <ul class="navbar-nav">
                 <div class="side-header">
-                    <h5>Dokter Komputer</h5>
+                    <a href="../index.php" class="fs-20 fw-500">Dokter Komputer</a>
                     <button type="button" class="btn-close d-xl-none" aria-label="Close"></button>
                 </div>
                 <li class="nav-item">
-                    <a href="#" class="side-link on"><i class="bi bi-house me-2"></i> Dashboard</a>
+                    <a href="" class="side-link on"><i class="bi bi-house me-2"></i> Dashboard</a>
                 </li>
                 <li class="nav-item my-3 ps-3">
                     <span class="nav-label">Store Manajemen</span>
@@ -45,10 +45,21 @@ $total_kategori = show("SELECT COUNT(*) AS total FROM kategori");
                     <a href="kategori/" class="side-link"><i class="bi bi-list-ul me-2"></i> Kategori</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="side-link"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+                    <a href="#" class="side-link"><i class="bi bi-bag me-2"></i> Pesanan</a>
+                </li>
+                <li class="nav-item my-3 ps-3">
+                    <span class="nav-label">Setting Site</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-newspaper me-2"></i> Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-images me-2"></i> Media</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="side-link"><i class="bi bi-gear me-2"></i> Pengaturan Toko</a>
                 </li>
             </ul>
-
         </nav>
 
         <!-- Page Content -->

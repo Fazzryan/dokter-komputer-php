@@ -113,7 +113,6 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                                                 <th class="fw-500">Kategori</th>
                                                 <th class="fw-500">Kondisi</th>
                                                 <th class="fw-500">Harga Normal</th>
-                                                <th class="fw-500">Harga Diskon</th>
                                                 <th class="fw-500">Aksi</th>
                                             </tr>
                                         </thead>
@@ -128,13 +127,6 @@ $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = 
                                                     <td><?= $item["nama_kategori"] ?></td>
                                                     <td><?= $item["kondisi"] ?></td>
                                                     <td>Rp<?= formatKeRupiah($item["harga_normal"]) ?></td>
-                                                    <td>
-                                                        <?php if (!$item["harga_diskon"]) : ?>
-                                                            Rp0
-                                                        <?php else : ?>
-                                                            Rp<?= formatKeRupiah($item["harga_diskon"]) ?>
-                                                        <?php endif ?>
-                                                    </td>
                                                     <td colspan="">
                                                         <a href="editProduk.php?slug=<?= $item["slug"] ?>" class="btn btn-gray"><i class="bi bi-pencil"></i></a>
                                                         <a href="hapus.php?slug=<?= $item["slug"] ?>" onclick="return confirm('Yakin hapus?')" class="btn btn-gray"><i class="bi bi-trash"></i></a>
