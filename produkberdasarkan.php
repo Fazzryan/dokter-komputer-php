@@ -68,7 +68,7 @@ $jumlah_produk = show("SELECT COUNT(*) AS jml_produk FROM produk LEFT JOIN kateg
                                 <span class="ms-2"">Semua Produk</span>
                             </a>
                             <?php foreach ($kategori as $item) : ?>
-                                <a href=" produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item ">
+                                <a href=" produkberdasarkan.php?katakunci=<?= $item["nama_kategori"] ?>" class="kategori-item <?php echo $item['nama_kategori'] == $katakunci ? 'on' : ''; ?>">
                                     <i class="bi <?= $item['icon_kategori'] ?>"></i>
                                     <span class="ms-2"><?= $item["nama_kategori"] ?></span>
                             </a>
