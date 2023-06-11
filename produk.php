@@ -3,6 +3,7 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
+// untuk keranjang dinavbar
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 $kategori = show("SELECT * FROM kategori");
 
@@ -84,7 +85,7 @@ if (isset($_POST["tambah_keranjang"])) {
                     <h5>Kategori</h5>
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-4">
                         <div class="d-flex flex-column">
-                            <a href="produk.php" class="kategori-item">
+                            <a href="produk.php" class="kategori-item on">
                                 <i class="bi bi-cart4"></i>
                                 <span class="ms-2"">Semua Produk</span>
                             </a>
