@@ -53,7 +53,7 @@ var_dump($jmlItemCart[0]["total"]);
                                     </li>
                                 <?php endif ?>
                                 <li>
-                                    <a class="dropdown-item fw-500" href="dashboard/index.php">
+                                    <a class="dropdown-item fw-500" href="akun/setting.php">
                                         <i class="bi bi-person me-1"></i> Akun
                                     </a>
                                 </li>
