@@ -18,7 +18,7 @@ var_dump($jmlItemCart[0]["total"]);
                     <a class="nav-link ln-30 fw-400 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link ln-30 fw-400 <?php echo basename($_SERVER['PHP_SELF']) == 'produk.php' ? 'active' : ''; ?>" href="produk.php">Produk</a>
+                    <a class="nav-link ln-30 fw-400 <?php echo basename($_SERVER['PHP_SELF']) == 'produk.php' || basename($_SERVER['PHP_SELF']) == 'cariproduk.php' || basename($_SERVER['PHP_SELF']) == 'produkberdasarkan.php' ? 'active' : ''; ?>" href="produk.php">Produk</a>
                 </li>
                 <li class="nav-item px-2">
                     <a href="service.php" class="nav-link ln-30 fw-400 <?php echo basename($_SERVER['PHP_SELF']) == 'service.php' ? 'active' : ''; ?>">Service</a>
@@ -45,18 +45,25 @@ var_dump($jmlItemCart[0]["total"]);
                                 <i class="bi bi-person-fill"></i>
                             </a>
                             <ul class="dropdown-menu shadow-1 border rounded-8 mt-2" aria-labelledby="dropdownMenuLink">
+                                <?php if ($user == "admin" || $user == "Admin") : ?>
+                                    <li>
+                                        <a class="dropdown-item fw-500" href="dashboard/index.php">
+                                            <i class="bi bi-house me-1"></i> Dashboard
+                                        </a>
+                                    </li>
+                                <?php endif ?>
                                 <li>
-                                    <a class="dropdown-item" href="dashboard/index.php">
-                                        <i class="bi bi-house me-1"></i> Dashboard
+                                    <a class="dropdown-item fw-500" href="dashboard/index.php">
+                                        <i class="bi bi-person me-1"></i> Akun
                                     </a>
                                 </li>
-                                <li><a class="dropdown-item" href="otentikasi/logout.php"><i class="bi bi-box-arrow-right me-1"></i> Logout</a></li>
+                                <li><a class="dropdown-item fw-500" href="otentikasi/logout.php"><i class="bi bi-box-arrow-right me-1 "></i> Logout</a></li>
                             </ul>
                         </div>
                     </li>
                 <?php else : ?>
                     <li class="nav-item">
-                        <a class="btn btn-green" href="otentikasi/login.php">
+                        <a class="btn btn-gray fw-500" href="otentikasi/login.php">
                             <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>
                             Login
                         </a>
