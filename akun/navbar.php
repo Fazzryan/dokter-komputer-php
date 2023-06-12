@@ -42,7 +42,8 @@ var_dump($jmlItemCart[0]["total"]);
                     <li class="nav-item">
                         <div class="dropdown">
                             <a class="btn btn-gray dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-fill"></i>
+                                <!-- <i class="bi bi-person-fill"></i> -->
+                                <img src="<?= $picture ?>" alt="pic" width="20" style="mix-blend-mode: multiply; border-radius: 50px;">
                             </a>
                             <ul class="dropdown-menu shadow-1 border rounded-8 mt-2" aria-labelledby="dropdownMenuLink">
                                 <?php if ($user == "admin" || $user == "Admin") : ?>
