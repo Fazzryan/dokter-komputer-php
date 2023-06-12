@@ -9,14 +9,27 @@ if (empty($_SESSION["username"]) || empty($_SESSION["email"]) || empty($_SESSION
 // untuk keranjang dinavbar
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 
-$username = $_GET["username"];
-$email = $_GET["email"];
+$id_user = $_GET["id_user"];
 
-$user_akun = show("SELECT * FROM user WHERE username = '$username' AND email = '$email'");
+$user_akun = show("SELECT * FROM user WHERE id_user = '$id_user'");
+
 if (isset($_POST["simpan"])) {
-
-    var_dump($_POST);
-    die;
+    if (updateUser($_POST) > 0) {
+        echo "
+        <script>
+            alert('Data berhasil diupdate');
+            window.location.href='setting.php';
+        </script>
+    ";
+    } else {
+        echo "
+        <script>
+            alert('Gagal update');
+        </script>
+    ";
+    }
+    // var_dump($_POST);
+    // die;
 }
 ?>
 
@@ -76,6 +89,9 @@ if (isset($_POST["simpan"])) {
                     <div class="card py-3 px-4 border-0 shadow-1 rounded-16 mb-3">
                         <h4>Edit Biodata Diri</h4>
                         <form action="" method="post" class="mt-3">
+                            <!-- Id User -->
+                            <input type="hidden" name="id_user" value="<?= $id_user ?>">
+
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Username</div>
                                 <div class="col-8 col-lg-9">
@@ -85,13 +101,15 @@ if (isset($_POST["simpan"])) {
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Tanggal Lahir</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="date" name="tanggal_lahir" class="form-control" required>
+                                    <input type="date" name="tanggal_lahir" class="form-control" required value="<?php $tgl = $user_akun[0]["tanggal_lahir"] ? $user_akun[0]["tanggal_lahir"] : "";
+                                                                                                                    echo $tgl ?>">
                                 </div>
                             </div>
                             <div class=" row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Jenis kelamin</div>
                                 <div class="col-8 col-lg-9">
                                     <select name="jenis_kelamin" class="form-select" required>
+                                        <option value="<?= $user_akun[0]["jenis_kelamin"] ?>"><?= $user_akun[0]["jenis_kelamin"] ?></option>
                                         <option value="Pria">Pria</option>
                                         <option value="Wanita">Wanita</option>
                                     </select>
@@ -106,7 +124,8 @@ if (isset($_POST["simpan"])) {
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Nomor HP</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="number" name="nomorhp" class="form-control" autocomplete="off" placeholder="082xxx" required>
+                                    <input type="text" name="nomorhp" class="form-control" autocomplete="off" placeholder="082xxx" maxlength="15" required value="<?php $nohp = $user_akun[0]["nomorhp"] ? $user_akun[0]["nomorhp"] : "";
+                                                                                                                                                                    echo $nohp ?>">
                                 </div>
                             </div>
                             <a href="setting.php" class="btn btn-gray">Batal</a>
