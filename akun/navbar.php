@@ -1,7 +1,5 @@
 <?php
 $jmlItemCart = show("SELECT COUNT(*) AS total FROM keranjang WHERE id_user = '$user'");
-var_dump($jmlItemCart[0]["total"]);
-// die;
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom">

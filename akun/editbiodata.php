@@ -11,8 +11,12 @@ $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
 
 $id_user = $_GET["id_user"];
 
-$user_akun = show("SELECT * FROM user WHERE id_user = '$id_user'");
-
+$data_user = show("SELECT * FROM user WHERE id_user = '$id_user'");
+if ($data_user[0]["picture"]) {
+    $picture = "../fileUpload/" . $data_user[0]["picture"];
+} else {
+    $picture = "../asset/img/profile_default.png";
+}
 if (isset($_POST["simpan"])) {
     if (updateUser($_POST) > 0) {
         echo "
@@ -95,13 +99,13 @@ if (isset($_POST["simpan"])) {
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Username</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="text" name="username" class="form-control" value="<?= $user_akun[0]['username'] ?>" required>
+                                    <input type="text" name="username" class="form-control" value="<?= $data_user[0]['username'] ?>" required>
                                 </div>
                             </div>
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Tanggal Lahir</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="date" name="tanggal_lahir" class="form-control" required value="<?php $tgl = $user_akun[0]["tanggal_lahir"] ? $user_akun[0]["tanggal_lahir"] : "";
+                                    <input type="date" name="tanggal_lahir" class="form-control" required value="<?php $tgl = $data_user[0]["tanggal_lahir"] ? $data_user[0]["tanggal_lahir"] : "";
                                                                                                                     echo $tgl ?>">
                                 </div>
                             </div>
@@ -109,7 +113,7 @@ if (isset($_POST["simpan"])) {
                                 <div class="col-4 col-lg-3">Jenis kelamin</div>
                                 <div class="col-8 col-lg-9">
                                     <select name="jenis_kelamin" class="form-select" required>
-                                        <option value="<?= $user_akun[0]["jenis_kelamin"] ?>"><?= $user_akun[0]["jenis_kelamin"] ?></option>
+                                        <option value="<?= $data_user[0]["jenis_kelamin"] ?>"><?= $data_user[0]["jenis_kelamin"] ?></option>
                                         <option value="Pria">Pria</option>
                                         <option value="Wanita">Wanita</option>
                                     </select>
@@ -118,13 +122,13 @@ if (isset($_POST["simpan"])) {
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Email</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="email" name="email" class="form-control" value="<?= $user_akun[0]['email'] ?>" required>
+                                    <input type="email" name="email" class="form-control" value="<?= $data_user[0]['email'] ?>" required>
                                 </div>
                             </div>
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-lg-3">Nomor HP</div>
                                 <div class="col-8 col-lg-9">
-                                    <input type="text" name="nomorhp" class="form-control" autocomplete="off" placeholder="082xxx" maxlength="15" required value="<?php $nohp = $user_akun[0]["nomorhp"] ? $user_akun[0]["nomorhp"] : "";
+                                    <input type="text" name="nomorhp" class="form-control" autocomplete="off" placeholder="082xxx" maxlength="15" required value="<?php $nohp = $data_user[0]["nomorhp"] ? $data_user[0]["nomorhp"] : "";
                                                                                                                                                                     echo $nohp ?>">
                                 </div>
                             </div>
