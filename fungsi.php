@@ -55,6 +55,27 @@ function adduser($data)
         return mysqli_affected_rows($koneksi);
     }
 }
+// Update User
+function updateUser($data)
+{
+    global $koneksi;
+
+    $id_user = htmlspecialchars($data["id_user"]);
+    $username = htmlspecialchars($data["username"]);
+    $email = htmlspecialchars($data["email"]);
+    $tanggal_lahir = htmlspecialchars($data["tanggal_lahir"]);
+    $jenis_kelamin = htmlspecialchars($data["jenis_kelamin"]);
+    $nomorhp = htmlspecialchars($data["nomorhp"]);
+
+    // $password = mysqli_real_escape_string($koneksi, $data["password"]);
+
+    // $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $updateUser = mysqli_query($koneksi, "UPDATE user SET username = '$username', email = '$email', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', nomorhp = '$nomorhp' WHERE id_user = '$id_user'");
+    if ($updateUser) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
 // Ambil data 
 function show($query)
 {
