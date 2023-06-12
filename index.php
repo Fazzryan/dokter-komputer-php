@@ -3,9 +3,16 @@ session_start();
 include "db/koneksi.php";
 include "fungsi.php";
 
-$user = !empty($_SESSION["id_user"]) ? $user = $_SESSION["id_user"] : $user = "";
-$kategori = show("SELECT * FROM kategori");
+$user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
+// gambar untuk navbar
+$data_user = show("SELECT * FROM user WHERE id_user = '$user'");
+if ($data_user[0]["picture"]) {
+    $picture = "fileUpload/" . $data_user[0]["picture"];
+} else {
+    $picture = "asset/img/profile_default.png";
+}
 
+$kategori = show("SELECT * FROM kategori");
 $rekomendasi_produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori LIMIT 8");
 $aksesoris_headset = show("SELECT * FROM produk WHERE id_kategori = 4 LIMIT 3");
 $aksesoris_speaker = show("SELECT * FROM produk WHERE id_kategori = 5 LIMIT 3");

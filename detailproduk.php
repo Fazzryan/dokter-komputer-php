@@ -4,6 +4,14 @@ include "db/koneksi.php";
 include "fungsi.php";
 
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
+// gambar untuk navbar
+$data_user = show("SELECT * FROM user WHERE id_user = '$user'");
+if ($data_user[0]["picture"]) {
+    $picture = "fileUpload/" . $data_user[0]["picture"];
+} else {
+    $picture = "asset/img/profile_default.png";
+}
+
 $slug = $_GET["slug"];
 $produk = show("SELECT * FROM produk LEFT JOIN kategori ON produk.id_kategori = kategori.id_kategori WHERE slug = '$slug'");
 // var_dump($produk);
