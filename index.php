@@ -168,7 +168,13 @@ $aksesoris_flashdisk = show("SELECT * FROM produk WHERE id_kategori = 6 LIMIT 3"
                                     <?= $item["nama_kategori"] ?>
                                 </a>
                                 <h5 class="card-title fs-15 mt-2">
-                                    <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link"><?= $item["nama_produk"] ?></a>
+                                    <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link">
+                                        <?php if (strlen($item["nama_produk"]) >= 45) : ?>
+                                            <?= substr_replace($item["nama_produk"], '...', 45) ?>
+                                        <?php else : ?>
+                                            <?= $item["nama_produk"] ?>
+                                        <?php endif ?>
+                                    </a>
                                 </h5>
                                 <div class="d-md-flex justify-content-between">
                                     <?php if ($item["harga_diskon"]) : ?>

@@ -154,7 +154,13 @@ if (isset($_POST["tambah_keranjang"])) {
                                             <?= $item["nama_kategori"] ?>
                                         </a>
                                         <h5 class="card-title fs-15 mt-2">
-                                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14"><?= substr_replace($item["nama_produk"], '..', 45) ?></a>
+                                            <a href="detailproduk.php?slug=<?= $item['slug'] ?>" class="card-link fs-14">
+                                                <?php if (strlen($item["nama_produk"]) >= 45) : ?>
+                                                    <?= substr_replace($item["nama_produk"], '...', 45) ?>
+                                                <?php else : ?>
+                                                    <?= $item["nama_produk"] ?>
+                                                <?php endif ?>
+                                            </a>
                                         </h5>
                                         <?php if ($item["harga_diskon"]) : ?>
                                             <div class="card-text fw-500 fs-15">
