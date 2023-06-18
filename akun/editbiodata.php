@@ -13,11 +13,13 @@ $id_user = $_GET["id_user"];
 
 $data_user = show("SELECT * FROM user WHERE id_user = '$id_user'");
 if ($data_user[0]["picture"]) {
-    $picture = "../fileUpload/" . $data_user[0]["picture"];
+    $picture = "../userPicture/" . $data_user[0]["picture"];
 } else {
     $picture = "../asset/img/profile_default.png";
 }
 if (isset($_POST["simpan"])) {
+    // var_dump($_POST);
+    // die;
     if (updateUser($_POST) > 0) {
         echo "
         <script>
@@ -92,7 +94,7 @@ if (isset($_POST["simpan"])) {
                 <div class="col-md-8">
                     <div class="card py-3 px-4 border-0 shadow-1 rounded-16 mb-3">
                         <h4>Edit Biodata Diri</h4>
-                        <form action="" method="post" class="mt-3">
+                        <form action="" method="post" enctype="multipart/form-data" class="mt-3">
                             <!-- Id User -->
                             <input type="hidden" name="id_user" value="<?= $id_user ?>">
 
@@ -125,11 +127,24 @@ if (isset($_POST["simpan"])) {
                                     <input type="email" name="email" class="form-control" value="<?= $data_user[0]['email'] ?>" required>
                                 </div>
                             </div>
-                            <div class="row align-items-center mb-3">
+                            <div class="row align-items-center mb-4">
                                 <div class="col-4 col-lg-3">Nomor HP</div>
                                 <div class="col-8 col-lg-9">
                                     <input type="text" name="nomorhp" class="form-control" autocomplete="off" placeholder="082xxx" maxlength="15" required value="<?php $nohp = $data_user[0]["nomorhp"] ? $data_user[0]["nomorhp"] : "";
                                                                                                                                                                     echo $nohp ?>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-4 col-lg-3">Foto</div>
+                                <div class="col-8 col-lg-9">
+                                    <img src="<?= $picture ?>" alt="profile" class="w-25" style="border-radius: 6px; aspect-ratio: auto;">
+                                    <input type="hidden" name="gambar_sekarang" value="<?= $data_user[0]['picture'] ?>">
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-3">
+                                <div class="col-4 col-lg-3">Foto Baru</div>
+                                <div class="col-8 col-lg-9">
+                                    <input type="file" name="gambar_baru" class="form-control">
                                 </div>
                             </div>
                             <a href="setting.php" class="btn btn-gray">Batal</a>
