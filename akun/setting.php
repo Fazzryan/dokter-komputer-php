@@ -15,13 +15,25 @@ $username = $data_user[0]["username"];
 $email = $data_user[0]["email"];
 $password = $data_user[0]["password"];
 
+// Buat navbar
 if ($data_user[0]["picture"]) {
-    $picture = "../fileUpload/" . $data_user[0]["picture"];
+    $picture = "../userPicture/" . $data_user[0]["picture"];
 } else {
     $picture = "../asset/img/profile_default.png";
 }
-// var_dump($picture);
-// die;
+
+if (isset($_POST["ubah_foto"])) {
+
+    var_dump($_POST);
+    die;
+    if (addUserPicture($_POST) > 0) {
+        echo "
+            <script>
+                alert('Foto berhasil diubah!');
+            </script>
+        ";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,6 +92,7 @@ if ($data_user[0]["picture"]) {
                     <div class="card py-3 px-4 border-0 shadow-1 rounded-16 mb-3">
                         <div class="row">
                             <div class="col-12 col-lg-7">
+
                                 <h4>Biodata Diri</h4>
                                 <div class="mt-3">
                                     <div class="row mb-3">
@@ -116,10 +129,6 @@ if ($data_user[0]["picture"]) {
                             </div>
                             <div class="col-12 col-lg-5 text-lg-center mt-4 mt-lg-0">
                                 <img src="<?= $picture ?>" alt="profile" style="border-radius: 6px; aspect-ratio: auto;">
-                                <form action="" method="post" enctype="multipart/form-data" class="mt-3">
-                                    <label for="picture" class="form-label fw-500">Ubah Foto</label>
-                                    <input type="file" name="picture" class="form-control">
-                                </form>
                             </div>
                         </div>
 
