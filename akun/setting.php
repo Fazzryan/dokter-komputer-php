@@ -47,6 +47,42 @@ if (isset($_POST["ubah_foto"])) {
     <link rel="stylesheet" href="../asset/css/style.css">
     <!-- Bs Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        #modal-content {
+            display: block;
+            margin: auto;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80%;
+            margin-top: 10%;
+        }
+
+        #modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            #modal-content {
+                position: relative;
+                top: 40%;
+                transform: translateY(-40%);
+            }
+        }
+    </style>
     <title>Setting - Dokter Komputer</title>
 </head>
 
@@ -128,7 +164,14 @@ if (isset($_POST["ubah_foto"])) {
                                 </div>
                             </div>
                             <div class="col-12 col-lg-5 text-lg-center mt-4 mt-lg-0">
-                                <img src="<?= $picture ?>" alt="profile" style="border-radius: 6px; aspect-ratio: auto;">
+                                <img src="<?= $picture ?>" alt="profile" style="border-radius: 6px; aspect-ratio: auto; cursor:pointer;" onclick="openModal(event, this)">
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div id="modal">
+                            <span onclick="closeModal()" style="color: white; position: absolute; top: 120px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
+                            <div id="modal-content">
+                                <img id="modal-image" src="" alt="">
                             </div>
                         </div>
 
@@ -169,6 +212,28 @@ if (isset($_POST["ubah_foto"])) {
 
     <script src="../asset/js/bootstrap.js"></script>
     <script src="../asset/js/script.js"></script>
+    <script>
+        function openModal(event, element) {
+            event.stopPropagation();
+            var modal = document.getElementById("modal");
+            var modalImage = document.getElementById("modal-image");
+
+            modal.style.display = "block";
+            modalImage.src = element.src;
+
+            // Menangkap klik di luar area modal
+            document.addEventListener('click', function(e) {
+                if (!modal.contains(e.target)) {
+                    closeModal();
+                }
+            });
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
