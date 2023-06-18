@@ -68,13 +68,79 @@ function updateUser($data)
     $nomorhp = htmlspecialchars($data["nomorhp"]);
 
     // $password = mysqli_real_escape_string($koneksi, $data["password"]);
-
     // $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $updateUser = mysqli_query($koneksi, "UPDATE user SET username = '$username', email = '$email', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', nomorhp = '$nomorhp' WHERE id_user = '$id_user'");
-    if ($updateUser) {
-        return mysqli_affected_rows($koneksi);
+    $target_dir = "../userPicture/";
+    $target_file = $target_dir . basename($_FILES["gambar_baru"]["name"]);
+    $ukuran_file = $_FILES["gambar_baru"]["size"];
+    $tipe_file = $_FILES["gambar_baru"]["type"];
+    $upload_berhasil = 1;
+    $tipe_file = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    $gambarBaru = basename($_FILES["gambar_baru"]["name"]);
+    $gambarSekarang = $data["gambar_sekarang"];
+
+    if ($gambarBaru != '') {
+        $user_picture = basename($_FILES["gambar_baru"]["name"]);
+    } else {
+        $user_picture = $gambarSekarang;
     }
+
+    if (file_exists($target_file)) {
+        echo "
+            <script>
+                alert('File sudah ada, ganti nama gambar!')
+                window.location='setting.php'
+            </script>
+        ";
+        $upload_berhasil = 0;
+    }
+    // Cek Ukuran File, ukuran dalam byte
+    if ($ukuran_file > 5000000) {
+        echo "
+            <script>
+                alert('Ukuran file terlalu besar!')
+                window.location='setting.php'
+            </script>
+        ";
+        $upload_berhasil = 0;
+    }
+    // Mengizinkan file dengan format tertentu
+    if ($tipe_file != "png" && $tipe_file != "jpeg" && $tipe_file != "jpg") {
+        echo "
+            <script>
+                alert('File tidak di izinkan!')
+            </script>
+        ";
+        $upload_berhasil = 0;
+    }
+    // Cek apakah $upload_berhasil nilainya 0 dan menampilkan pesan kesalahan
+    if ($upload_berhasil == 0) {
+        echo "
+            <script>
+                alert('File tidak bisa diupload!')
+                window.location='setting.php'
+            </script>
+        ";
+        // Jika $upload_berhasil = 1 maka coba upload file
+    } else {
+        if (move_uploaded_file($_FILES["gambar_baru"]["tmp_name"], $target_file)) {
+            $updateUser = mysqli_query($koneksi, "UPDATE user SET username = '$username', email = '$email', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', nomorhp = '$nomorhp', picture = '$user_picture' WHERE id_user = '$id_user'");
+            if ($updateUser) {
+                return mysqli_affected_rows($koneksi);
+            } else {
+                echo "Gagal Simpan";
+            }
+        } else {
+            echo "Upload file gagal";
+        }
+    }
+}
+// Upload Foto User
+function addUserPicture($data)
+{
+    global $koneksi;
+    $id_user = $data["id_user"];
 }
 // Ambil data 
 function show($query)
