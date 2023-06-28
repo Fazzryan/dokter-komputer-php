@@ -27,7 +27,7 @@ $jmlItemCart = show("SELECT COUNT(*) AS total FROM keranjang WHERE id_user = '$u
             </ul>
             <ul class="navbar-nav flex-row">
                 <li class="nav-item me-2">
-                    <a class="btn btn-gray position-relative" href="keranjang.php">
+                    <a class="btn btn-gray position-relative" href="../keranjang.php">
                         <i class="bi bi-cart-fill"></i>
                         <?php if ($jmlItemCart[0]["total"] > 0) : ?>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="z-index: 999;">
