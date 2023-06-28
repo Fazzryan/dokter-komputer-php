@@ -106,7 +106,7 @@ if (isset($_POST["ubah_foto"])) {
             <div class="row">
                 <div class="col-md-4">
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-3">
-                        <a href="setting.php" class="kategori-item on">
+                        <a href="setting.php" class="kategori-item">
                             <i class="bi bi-person-fill"></i>
                             <span class="ms-2">Biodata Diri</span>
                         </a>
@@ -114,7 +114,7 @@ if (isset($_POST["ubah_foto"])) {
                             <i class="bi bi-bag-check-fill"></i>
                             <span class="ms-2">Pesanan</span>
                         </a>
-                        <a href="alamat.php" class="kategori-item">
+                        <a href="alamat.php" class="kategori-item on">
                             <i class="bi bi-geo-alt-fill"></i>
                             <span class="ms-2">Alamat</span>
                         </a>
@@ -126,79 +126,39 @@ if (isset($_POST["ubah_foto"])) {
                 </div>
                 <div class="col-md-8">
                     <div class="card py-3 px-4 border-0 shadow-1 rounded-16 mb-3">
-                        <div class="row">
-                            <div class="col-12 col-lg-7">
-
-                                <h4>Biodata Diri</h4>
-                                <div class="mt-3">
-                                    <div class="row mb-3">
-                                        <div class="col-5 col-lg-4">Username</div>
-                                        <div class="col-7 col-lg-8"><?= $username ?></div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-5 col-lg-4">Tanggal Lahir</div>
-                                        <div class="col-7 col-lg-8">
-                                            <?php $tgl = $data_user[0]["tanggal_lahir"] ? $data_user[0]["tanggal_lahir"] : "-";
-                                            echo $tgl; ?>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-5 col-lg-4">Jenis kelamin</div>
-                                        <div class="col-7 col-lg-8">
-                                            <?php $jk = $data_user[0]["jenis_kelamin"] ? $data_user[0]["jenis_kelamin"] : "-";
-                                            echo $jk; ?>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-5 col-lg-4">Email</div>
-                                        <div class="col-7 col-lg-8"><?= $email ?></div>
-                                    </div>
-                                    <div class="row mb-3">
-                                        <div class="col-5 col-lg-4">Nomor HP</div>
-                                        <div class="col-7 col-lg-8">
-                                            <?php $nohp = $data_user[0]["nomorhp"] ? $data_user[0]["nomorhp"] : "-";
-                                            echo $nohp; ?>
-                                        </div>
-                                    </div>
-                                    <a href="editbiodata.php?id_user=<?= $user ?>" class="btn btn-green">Edit Biodata</a>
-                                </div>
+                        <div class="row mb-3 justify-content-between align-items-center">
+                            <div class="col-6">
+                                <h4>Alamat</h4>
                             </div>
-                            <div class="col-12 col-lg-5 text-lg-center mt-4 mt-lg-0">
-                                <img src="<?= $picture ?>" alt="profile" style="border-radius: 6px; aspect-ratio: auto; cursor:pointer;" onclick="openModal(event, this)">
+                            <div class="col-6 text-end ">
+                                <a href="tambahalamat.php" class="btn btn-green">Tambah Alamat</a>
                             </div>
                         </div>
-                        <!-- Modal -->
-                        <div id="modal">
-                            <span onclick="closeModal()" style="color: white; position: absolute; top: 120px; right: 20px; font-size: 30px; cursor: pointer;">&times;</span>
-                            <div id="modal-content">
-                                <img id="modal-image" src="" alt="">
+                        <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                            <div class="col">
+                                <div class="card rounded-16 p-1">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle text-muted">Rumah</h6>
+                                        <h5 class="card-title">Dinda Fazryan</h5>
+                                        <span class="card-subtitle">087123123</span>
+                                        <p class="card-text">jl bojonghuni rt 1 rw 12 kel maleber kec ciamis jawa barat (sebelah kiri warung kakapean, warna kuning)</p>
+                                        <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
+                                        <a href="#" class="btn btn-gray fs-14 ">Hapus</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <hr class="my-4">
-                        <h4>Password</h4>
-                        <div class="mt-3">
-                            <form action="" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <label for="password_baru" class="form-label">Password Baru</label>
-                                            <input type="password" name="password_baru" class="form-control">
-                                            <div class="fs-14 mt-2 text-muted">Lupa password? <a href="" class="text-green">Reset password</a>.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <label for="password_lama" class="form-label">Password Saat ini</label>
-                                            <input type="password" name="password_lama" class="form-control" value="<?= $password ?>">
-                                            <div class="fs-14 mt-2 text-muted">Password di atas telah di enkripsi.</div>
-                                        </div>
+                            <div class="col">
+                                <div class="card rounded-16 p-1">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle text-muted">Rumah</h6>
+                                        <h5 class="card-title">Dinda Fazryan</h5>
+                                        <span class="card-subtitle">087123123</span>
+                                        <p class="card-text">jl bojonghuni rt 1 rw 12 kel maleber kec ciamis jawa barat (sebelah kiri warung kakapean, warna kuning)</p>
+                                        <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
+                                        <a href="#" class="btn btn-gray fs-14 ">Hapus</a>
                                     </div>
                                 </div>
-                                <div class="mt-2">
-                                    <button type="button" name="simpan_password" class="btn btn-green">Simpan Password</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
