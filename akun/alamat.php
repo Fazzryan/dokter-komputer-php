@@ -89,7 +89,7 @@ if (isset($_POST["ubah_foto"])) {
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="card py-3 px-4 border-0 shadow-1 rounded-16 mb-3">
+                    <div class="card py-3 px-4 border-0 shadow-1 rounded-16" style="margin-bottom: 140px;">
                         <div class="row mb-3 justify-content-between align-items-center">
                             <div class="col-6">
                                 <h4>Alamat</h4>
