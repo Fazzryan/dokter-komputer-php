@@ -106,19 +106,19 @@ if (isset($_POST["ubah_foto"])) {
             <div class="row">
                 <div class="col-md-4">
                     <div class="card p-3 border-0 shadow-1 rounded-16 mb-3">
-                        <a href="#" class="kategori-item on">
+                        <a href="setting.php" class="kategori-item on">
                             <i class="bi bi-person-fill"></i>
                             <span class="ms-2">Biodata Diri</span>
                         </a>
-                        <a href="" class="kategori-item">
+                        <a href="pesanan.php" class="kategori-item">
                             <i class="bi bi-bag-check-fill"></i>
                             <span class="ms-2">Pesanan</span>
                         </a>
-                        <a href="#" class="kategori-item">
+                        <a href="alamat.php" class="kategori-item">
                             <i class="bi bi-geo-alt-fill"></i>
                             <span class="ms-2">Alamat</span>
                         </a>
-                        <a href="#" class="kategori-item">
+                        <a href="pembayaran.php" class="kategori-item">
                             <i class="bi bi-credit-card-fill"></i>
                             <span class="ms-2">Pembayaran</span>
                         </a>
