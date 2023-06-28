@@ -47,43 +47,7 @@ if (isset($_POST["ubah_foto"])) {
     <link rel="stylesheet" href="../asset/css/style.css">
     <!-- Bs Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <style>
-        #modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        #modal-content {
-            display: block;
-            margin: auto;
-            width: 80%;
-            max-width: 800px;
-            max-height: 80%;
-            margin-top: 10%;
-        }
-
-        #modal-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            #modal-content {
-                position: relative;
-                top: 40%;
-                transform: translateY(-40%);
-            }
-        }
-    </style>
-    <title>Setting - Dokter Komputer</title>
+    <title>Alamat - Dokter Komputer</title>
 </head>
 
 <body>
