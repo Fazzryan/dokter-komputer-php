@@ -8,12 +8,7 @@ if (empty($_SESSION["username"]) || empty($_SESSION["email"]) || empty($_SESSION
 }
 // untuk keranjang dinavbar
 $user = !empty($_SESSION["id_user"]) ? $_SESSION["id_user"] : "";
-
 $data_user = show("SELECT * FROM user WHERE id_user = '$user'");
-
-$username = $data_user[0]["username"];
-$email = $data_user[0]["email"];
-$password = $data_user[0]["password"];
 
 // Buat navbar
 if ($data_user[0]["picture"]) {
@@ -22,18 +17,8 @@ if ($data_user[0]["picture"]) {
     $picture = "../asset/img/profile_default.png";
 }
 
-if (isset($_POST["ubah_foto"])) {
+$alamat = show("SELECT * FROM alamat WHERE id_user = '$user'");
 
-    var_dump($_POST);
-    die;
-    if (addUserPicture($_POST) > 0) {
-        echo "
-            <script>
-                alert('Foto berhasil diubah!');
-            </script>
-        ";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -98,32 +83,36 @@ if (isset($_POST["ubah_foto"])) {
                                 <a href="tambahalamat.php" class="btn btn-green">Tambah Alamat</a>
                             </div>
                         </div>
-                        <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
-                            <div class="col">
-                                <div class="card rounded-16 p-1">
-                                    <div class="card-body">
-                                        <h6 class="card-subtitle text-muted">Rumah</h6>
-                                        <h5 class="card-title">Dinda Fazryan</h5>
-                                        <span class="card-subtitle">087123123</span>
-                                        <p class="card-text">jl bojonghuni rt 1 rw 12 kel maleber kec ciamis jawa barat (sebelah kiri warung kakapean, warna kuning)</p>
-                                        <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
-                                        <a href="#" class="btn btn-gray fs-14 ">Hapus</a>
+                        <?php if ($alamat) : ?>
+                            <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+                                <?php foreach ($alamat as $item) : ?>
+                                    <div class="col">
+                                        <div class="card h-100 rounded-16 p-1">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle text-muted"><?= $item["label_alamat"] ?></h6>
+                                                <h5 class="card-title"><?= $item["penerima"] ?></h5>
+                                                <span class="card-subtitle"><?= $item["nohp_penerima"] ?></span>
+                                                <p class="card-text"><?= $item["alamat_lengkap"] ?> (<?= $item["catatan"] ?>)</p>
+                                                <form action="" method="post" class="mb-2">
+                                                    <input type="hidden" name="" value="<?= $item['id_user'] ?>">
+                                                    <button type="submit" class="btn bg-trasparent text-green fw-500">Alamat Aktif</button>
+                                                </form>
+                                                <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
+                                                <a href="#" class="btn btn-gray fs-14 fw-500">Hapus</a>
+                                            </div>
+                                        </div>
                                     </div>
+                                <?php endforeach ?>
+                            </div>
+                        <?php else : ?>
+                            <div class="row row-cols-1 g-2 g-lg-3 justify-content-center mt-3">
+                                <div class="col text-center address">
+                                    <img src="../asset/img/address.svg" alt="icon">
+                                    <h5 class="mt-4">Oh tidak! Alamat pengiriman Anda masih kosong</h5>
+                                    <p>Segera tambahkan alamat agar kami dapat mengantarkan pesanan Anda dengan sukses.</p>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card rounded-16 p-1">
-                                    <div class="card-body">
-                                        <h6 class="card-subtitle text-muted">Rumah</h6>
-                                        <h5 class="card-title">Dinda Fazryan</h5>
-                                        <span class="card-subtitle">087123123</span>
-                                        <p class="card-text">jl bojonghuni rt 1 rw 12 kel maleber kec ciamis jawa barat (sebelah kiri warung kakapean, warna kuning)</p>
-                                        <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
-                                        <a href="#" class="btn btn-gray fs-14 ">Hapus</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>

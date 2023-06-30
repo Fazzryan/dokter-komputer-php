@@ -275,6 +275,10 @@ td {
 .keranjang .keranjang_img {
     width: 120px;
 }
+/* ======================== Alamat ========================= */
+#hero .address img{
+    width: 50%;
+}
 /* =========================LOGIN & REGISTRASI ================== */
 .auth  {
     margin: 13rem 0;
@@ -599,6 +603,17 @@ footer .footer-link:hover {
         width: 80px;
     }
     .keranjang .empty-cart p{
+        font-size: 14px;
+    }
+    /* ======================== Alamat ========================= */
+    #hero .address img{
+        width: 75%;
+    }
+    #hero .address h5{
+       font-weight: 500;
+       font-size: 18px;
+    }
+    #hero .address p{
         font-size: 14px;
     }
     /* =========================LOGIN & REGISTRASI ================== */
