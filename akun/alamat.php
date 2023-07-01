@@ -87,7 +87,7 @@ $alamat = show("SELECT * FROM alamat WHERE id_user = '$user'");
                             <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
                                 <?php foreach ($alamat as $item) : ?>
                                     <div class="col">
-                                        <div class="card h-100 rounded-16 p-1">
+                                        <div class="card rounded-16 p-1">
                                             <div class="card-body">
                                                 <h6 class="card-subtitle text-muted"><?= $item["label_alamat"] ?></h6>
                                                 <h5 class="card-title"><?= $item["penerima"] ?></h5>
