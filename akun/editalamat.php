@@ -21,21 +21,20 @@ $id_alamat = $_GET["id_alamat"];
 $alamat = show("SELECT * FROM alamat WHERE id_alamat = '$id_alamat'");
 
 if (isset($_POST["edit_alamat"])) {
-    var_dump($_POST);
-    // if (editAlamat($_POST) > 0) {
-    //     echo "
-    //         <script>
-    //             alert('Alamat berhasil ditambahkan');
-    //             window.location.href='alamat.php'
-    //         </script>
-    //     ";
-    // } else {
-    //     echo "
-    //         <script>
-    //             alert('Alamat gagal ditambahkan');
-    //         </script>
-    //     ";
-    // }
+    if (editAlamat($_POST) > 0) {
+        echo "
+            <script>
+                alert('Alamat berhasil diubah');
+                window.location.href='alamat.php'
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Alamat gagal diubah');
+            </script>
+        ";
+    }
 }
 ?>
 
@@ -103,6 +102,7 @@ if (isset($_POST["edit_alamat"])) {
                         </div>
                         <form action="" method="post">
                             <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3 mb-3">
+                                <input type="hidden" name="id_alamat" value="<?= $alamat[0]['id_alamat'] ?>">
                                 <input type="hidden" name="id_user" value="<?= $user ?>">
                                 <div class="col">
                                     <label for="label_alamat" class="fw-500 mb-2">Label Alamat</label>

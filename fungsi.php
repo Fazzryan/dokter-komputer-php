@@ -441,6 +441,39 @@ function addAlamat($data)
         return mysqli_affected_rows($koneksi);
     }
 }
+// Edit Alamat
+function editAlamat($data)
+{
+    global $koneksi;
+
+    $id_alamat = htmlspecialchars($data["id_alamat"]);
+    $id_user = htmlspecialchars($data["id_user"]);
+    $label_alamat = htmlspecialchars($data["label_alamat"]);
+    $alamat_lengkap = htmlspecialchars($data["alamat_lengkap"]);
+    $catatan = htmlspecialchars($data["catatan"]);
+    $penerima = htmlspecialchars($data["penerima"]);
+    $nohp_penerima = htmlspecialchars($data["nohp_penerima"]);
+
+    $query = mysqli_query($koneksi, "UPDATE alamat SET id_user = '$id_user', label_alamat = '$label_alamat', alamat_lengkap = '$alamat_lengkap', catatan = '$catatan', penerima = '$penerima', nohp_penerima = '$nohp_penerima' WHERE id_alamat = '$id_alamat'");
+
+    if ($query) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
+
+// Hapus Alamat
+function deleteAlamat($data)
+{
+    global $koneksi;
+
+    $id_alamat = $data["id_alamat"];
+    $id_user = $data["id_user"];
+
+    $query =  mysqli_query($koneksi, "DELETE FROM alamat WHERE id_alamat = '$id_alamat' AND id_user = '$id_user'");
+    if ($query) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
 
 function formatKeRupiah($angka)
 {
