@@ -20,7 +20,20 @@ if ($data_user[0]["picture"]) {
 $alamat = show("SELECT * FROM alamat WHERE id_user = '$user'");
 
 if (isset($_POST["hapus_alamat"])) {
-    
+    if (deleteAlamat($_POST) > 0) {
+        echo "
+            <script>
+                alert('Alamat berhasil dihapus');
+                window.location.href='alamat.php'
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Alamat gagal dihapus');
+            </script>
+        ";
+    }
 }
 ?>
 
@@ -103,7 +116,8 @@ if (isset($_POST["hapus_alamat"])) {
                                                 <a href="editalamat.php?id_alamat=<?= $item['id_alamat'] ?>" class="btn btn-green fs-14 me-1">Edit Alamat</a>
                                                 <form action="" method="post" class="d-inline">
                                                     <input type="hidden" name="id_alamat" value="<?= $item['id_alamat'] ?>">
-                                                    <button type="submit" name="hapus_alamat" class="btn btn-gray fs-14 fw-500">Hapus</button>
+                                                    <input type="hidden" name="id_user" value="<?= $user ?>">
+                                                    <button type="submit" name="hapus_alamat" class="btn btn-gray fs-14 fw-500" onclick="return confirm('Yakin hapus alamat?')">Hapus</button>
                                                 </form>
                                             </div>
                                         </div>
