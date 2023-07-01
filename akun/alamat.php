@@ -105,14 +105,17 @@ if (isset($_POST["hapus_alamat"])) {
                                     <div class="col">
                                         <div class="card rounded-16 p-1">
                                             <div class="card-body">
-                                                <h6 class="card-subtitle text-muted"><?= $item["label_alamat"] ?></h6>
+                                                <div class="d-flex justify-content-between">
+                                                    <h6 class="card-subtitle text-muted"><?= $item["label_alamat"] ?></h6>
+                                                    <?php if ($item["is_aktif"] == 0) : ?>
+                                                        <a href="ubah_alamat_aktif.php?id_alamat=<?= $item['id_alamat'] ?>&id_user=<?= $user ?>" class="fs-14 text-black">Jadikan Alamat Aktif</a>
+                                                    <?php else : ?>
+                                                        <span class="text-green fw-500 fs-14">Alamat Aktif</span>
+                                                    <?php endif ?>
+                                                </div>
                                                 <h5 class="card-title"><?= $item["penerima"] ?></h5>
                                                 <span class="card-subtitle"><?= $item["nohp_penerima"] ?></span>
                                                 <p class="card-text"><?= $item["alamat_lengkap"] ?> (<?= $item["catatan"] ?>)</p>
-                                                <form action="" method="post" class="mb-2">
-                                                    <input type="hidden" name="" value="<?= $item['id_user'] ?>">
-                                                    <button type="submit" class="btn bg-trasparent text-green fw-500">Alamat Aktif</button>
-                                                </form>
                                                 <a href="editalamat.php?id_alamat=<?= $item['id_alamat'] ?>" class="btn btn-green fs-14 me-1">Edit Alamat</a>
                                                 <form action="" method="post" class="d-inline">
                                                     <input type="hidden" name="id_alamat" value="<?= $item['id_alamat'] ?>">
