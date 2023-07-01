@@ -19,6 +19,9 @@ if ($data_user[0]["picture"]) {
 
 $alamat = show("SELECT * FROM alamat WHERE id_user = '$user'");
 
+if (isset($_POST["hapus_alamat"])) {
+    
+}
 ?>
 
 <!DOCTYPE html>
@@ -97,8 +100,11 @@ $alamat = show("SELECT * FROM alamat WHERE id_user = '$user'");
                                                     <input type="hidden" name="" value="<?= $item['id_user'] ?>">
                                                     <button type="submit" class="btn bg-trasparent text-green fw-500">Alamat Aktif</button>
                                                 </form>
-                                                <a href="#" class="btn btn-green fs-14 me-1">Ubah Alamat</a>
-                                                <a href="#" class="btn btn-gray fs-14 fw-500">Hapus</a>
+                                                <a href="editalamat.php?id_alamat=<?= $item['id_alamat'] ?>" class="btn btn-green fs-14 me-1">Edit Alamat</a>
+                                                <form action="" method="post" class="d-inline">
+                                                    <input type="hidden" name="id_alamat" value="<?= $item['id_alamat'] ?>">
+                                                    <button type="submit" name="hapus_alamat" class="btn btn-gray fs-14 fw-500">Hapus</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
