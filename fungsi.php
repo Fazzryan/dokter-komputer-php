@@ -420,6 +420,28 @@ function deleteKeranjang($data)
         return mysqli_affected_rows($koneksi);
     }
 }
+
+// Tambah Alamat
+function addAlamat($data)
+{
+    global $koneksi;
+
+    $id_user = htmlspecialchars($data["id_user"]);
+    $label_alamat = htmlspecialchars($data["label_alamat"]);
+    $alamat_lengkap = htmlspecialchars($data["alamat_lengkap"]);
+    $catatan = htmlspecialchars($data["catatan"]);
+    $penerima = htmlspecialchars($data["penerima"]);
+    $nohp_penerima = htmlspecialchars($data["nohp_penerima"]);
+
+    $query = mysqli_query($koneksi, "INSERT INTO alamat (id_alamat, id_user, label_alamat, alamat_lengkap, catatan, penerima, nohp_penerima) VALUES
+    ('','$id_user','$label_alamat','$alamat_lengkap','$catatan','$penerima','$nohp_penerima')
+    ");
+
+    if ($query) {
+        return mysqli_affected_rows($koneksi);
+    }
+}
+
 function formatKeRupiah($angka)
 {
     $hasi_rupiah = number_format($angka, 2, ',', '.');
